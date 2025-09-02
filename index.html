@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>AI Talent Bridge | Career Support for AI Engineers - Tokyo AI Community Official Partner</title>
+    <meta name="description" content="Tokyo AI Community Official Career Support Partner. Introducing long-term growth companies through corporate value evaluation by analysts. Complete support for foreign engineers. Completely free.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Consolidated CSS for better performance -->
+    <link rel="stylesheet" href="styles-consolidated.css">
+    
+    <!-- Force CTA button styles and title fix -->
+    <style>
+        /* HEADER VISIBILITY IMPROVEMENTS - INLINE FOR IMMEDIATE EFFECT */
+        
+        /* Reset body margin for fixed header */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Header Background with Dark Theme */
+        .header {
+            background: rgba(15, 23, 42, 0.95) !important;
+            backdrop-filter: blur(10px) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+            padding: 16px 0 !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 1000 !important;
+        }
+        
+        /* Navigation Container */
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        /* Logo Styling */
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            height: 40px;
+            width: auto;
+            max-width: 240px; /* 幅の最大値を設定 */
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        
+        .logo-img:hover {
+            transform: translateY(-2px);
+            filter: drop-shadow(0 4px 8px rgba(16, 185, 129, 0.4));
+        }
+        
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-size: 0.95rem !important;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .nav-link:hover {
+            color: #10B981 !important;
+        }
+        
+        /* CTA Button */
+        .nav-cta {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+            color: white !important;
+            padding: 10px 24px !important;
+            border-radius: 8px !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+        }
+        
+        /* Language Switcher in Dark Header */
+        .language-switcher {
+            background: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            border-radius: 20px;
+            padding: 4px;
+            display: flex;
+            gap: 4px;
+        }
+        
+        .lang-btn {
+            color: rgba(255, 255, 255, 0.8) !important;
+            background: transparent;
+            border: 1px solid transparent;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.15) !important;
+            color: #ffffff !important;
+        }
+        
+        .lang-btn.active {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+            color: white !important;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Hero Section Margin for Fixed Header */
+        .hero-section {
+            margin-top: 80px !important;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 12px 0 !important;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .nav-menu {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .logo-img {
+                height: 32px; /* Smaller logo on mobile */
+            }
+            
+            .hero-section {
+                margin-top: 160px !important;
+            }
+            
+            .language-switcher {
+                margin: 10px 0;
+                order: -1;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .nav-cta {
+                width: 100%;
+                text-align: center;
+                order: 2;
+            }
+        }
+        
+        /* END OF HEADER IMPROVEMENTS */
+        
+        /* Force title line break for PC with tighter spacing */
+        @media (min-width: 769px) {
+            .main-title {
+                white-space: pre-line !important;
+                display: block !important;
+                line-height: 0.9 !important;  /* Very tight line spacing */
+            }
+            .main-title br {
+                display: block !important;
+                content: "\A" !important;
+                white-space: pre !important;
+                margin: -0.3em 0 !important;  /* More negative margin for tighter gap */
+            }
+        }
+        
+        /* CTA Button styles */
+        .cta-primary,
+        a.cta-primary {
+            background: #10B981 !important;
+            color: #FFFFFF !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            font-weight: 700 !important;
+            padding: 16px 48px !important;
+            border: 3px solid #10B981 !important;
+            border-radius: 50px !important;
+            display: inline-block !important;
+            text-decoration: none !important;
+            position: relative !important;
+            z-index: 9999 !important;
+        }
+        .cta-primary:hover {
+            background: #059669 !important;
+            border-color: #059669 !important;
+        }
+    </style>
+    
+    <!-- Force title break with JavaScript as fallback -->
+    <script>
+        // Trigger animation when trust section comes into view
+        window.addEventListener('scroll', function() {
+            const trustSection = document.querySelector('.trust-section');
+            if (trustSection) {
+                const rect = trustSection.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    trustSection.classList.add('in-view');
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/logo-aligned.svg" alt="AI Talent Bridge" class="logo-img">
+            </div>
+            <div class="nav-menu">
+                <a href="#companies" class="nav-link" data-i18n="nav.companies">Companies</a>
+                <a href="#value-create" class="nav-link" data-i18n="nav.support">Support</a>
+                <a href="#team" class="nav-link" data-i18n="nav.team">Team</a>
+                <div class="language-switcher">
+                    <button class="lang-btn" data-lang="ja">日本語</button>
+                    <button class="lang-btn active" data-lang="en">English</button>
+                </div>
+                <a href="#register" class="nav-cta" data-i18n="nav.register">Free Registration</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero-section" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <!-- Subtitle -->
+                <p class="subtitle" data-i18n="hero.subtitle">Your Next Career Stage in AI Engineering</p>
+                
+                <!-- Main Title -->
+                <h1 class="main-title">
+                    <span data-i18n="hero.title1">Transform Your Hidden Value</span><br>
+                    <span data-i18n="hero.title2">Into Corporate Future.</span>
+                </h1>
+                
+                <!-- Hero Description -->
+                <p class="hero-description" data-i18n="hero.description">
+                    As Tokyo AI Community's official partner,<br>
+                    we connect exceptional AI talent with ideal opportunities.
+                </p>
+                
+                <!-- Trust Badges -->
+                <div class="trust-badges">
+                    <span class="badge"><span class="badge-icon">🌍</span><span data-i18n="hero.features.multilingual">Multilingual Support</span></span>
+                    <span class="badge"><span class="badge-icon">💎</span><span data-i18n="hero.features.enterprise">Enterprise Value Focus</span></span>
+                    <span class="badge"><span class="badge-icon">👤</span><span data-i18n="hero.features.support">1-on-1 Support</span></span>
+                    <span class="badge"><span class="badge-icon">✨</span><span data-i18n="hero.features.free">Completely Free</span></span>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="cta-container">
+                    <a href="#contact-form" class="cta-primary" data-i18n="hero.cta">
+                        Start Free Career Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-header">
+                <h2 class="trust-title" data-i18n="trust.title">Why Choose Us</h2>
+                <p class="trust-subtitle" data-i18n="trust.subtitle">Unique value through Tokyo AI Community partnership</p>
+            </div>
+            <div class="trust-grid trust-cards">
+                <div class="trust-item trust-card">
+                    <span class="badge">FREE</span>
+                    <div class="trust-icon icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="12" cy="16" r="1" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="trust.card1.title">100% Free & Transparent</h3>
+                    <p data-i18n="trust.card1.description">No fees even after successful placement. No hidden costs.</p>
+                </div>
+                <div class="trust-item trust-card">
+                    <span class="badge">OFFICIAL</span>
+                    <div class="trust-icon icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="trust.card2.title">Tokyo AI Community Official</h3>
+                    <p data-i18n="trust.card2.description">Access to 1,000+ AI engineer network</p>
+                </div>
+                <div class="trust-item trust-card">
+                    <span class="badge">DATA</span>
+                    <div class="trust-icon icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M9 9v8M15 5v12M12 12v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="trust.card3.title">Data-Driven Analysis</h3>
+                    <p data-i18n="trust.card3.description">Quantitative evaluation of tech stack, growth, and culture</p>
+                </div>
+                <div class="trust-item trust-card">
+                    <span class="badge">GLOBAL</span>
+                    <div class="trust-icon icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M2 12h20M12 2c2.5 2.5 4 5.5 4 10s-1.5 7.5-4 10c-2.5-2.5-4-5.5-4-10s1.5-7.5 4-10z" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="trust.card4.title">Global Team Support</h3>
+                    <p data-i18n="trust.card4.description">10+ countries supported. Visa consultation available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Companies Section -->
+    <section class="companies" id="companies">
+        <div class="container">
+            <h2 class="section-title" data-i18n="companies.title">Partner Companies</h2>
+            <p class="section-subtitle" data-i18n="companies.subtitle">5 exclusive opportunities monthly</p>
+            
+            <div class="companies-grid-simplified">
+                <div class="company-category">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="companies.categories.foreign">Global Tech Companies</h3>
+                    <p class="category-label" data-i18n="companies.categories.foreignLabel">Key Areas</p>
+                    <p data-i18n-list="companies.categories.foreignList">Microsoft, Google, Meta, Amazon, Others</p>
+                </div>
+                
+                <div class="company-category">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 21h18"/>
+                            <path d="M5 21V7l8-4v18"/>
+                            <path d="M19 21V11l-6-3"/>
+                            <rect x="9" y="9" width="4" height="4"/>
+                            <rect x="9" y="14" width="4" height="4"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="companies.categories.enterprise">Japanese Enterprises</h3>
+                    <p class="category-label" data-i18n="companies.categories.enterpriseLabel">Key Areas</p>
+                    <p data-i18n-list="companies.categories.enterpriseList">Finance, Manufacturing, Retail, Consulting</p>
+                </div>
+                
+                <div class="company-category">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12"/>
+                            <path d="M20 13v7"/>
+                            <path d="M20 4v4"/>
+                            <circle cx="20" cy="9" r="1"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="companies.categories.startup">AI Startups</h3>
+                    <p class="category-label" data-i18n="companies.categories.startupLabel">Key Areas</p>
+                    <p data-i18n-list="companies.categories.startupList">Pre-Seed - Series A, Series B - C, Pre-IPO, Post-IPO</p>
+                </div>
+            </div>
+            
+            <div class="connection-highlight">
+                <p class="highlight-text">
+                    <span class="highlight-icon">✨</span>
+                    <span data-i18n="companies.connectionHighlight">Leveraging Tokyo AI Community insights for company information and interview preparation</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Create Section -->
+    <section class="value-create-section" id="value-create">
+        <div class="container">
+            <h2 class="section-title" data-i18n="value.title">Our Support Process</h2>
+            
+            <div class="value-cards">
+                <div class="value-card">
+                    <div class="value-icon">💎</div>
+                    <h3 data-i18n="value.step1.title">Career Consultation</h3>
+                    <p data-i18n="value.step1.description">Understanding your career vision</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3 data-i18n="value.step2.title">Company Matching</h3>
+                    <p data-i18n="value.step2.description">Data-driven matching process</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🔄</div>
+                    <h3 data-i18n="value.step3.title">Interview Support</h3>
+                    <p data-i18n="value.step3.description">End-to-end interview preparation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <h2 class="section-title" data-i18n="team.title">
+                Leadership Team
+            </h2>
+            <p class="section-subtitle" data-i18n="team.subtitle">
+                Enterprise value experts supporting your career
+            </p>
+            
+            <div class="team-grid">
+                <!-- Barry O'Neill -->
+                <div class="team-card advisor">
+                    <img src="images/barry.avif" alt="Barry O'Neill" class="team-photo" loading="lazy">
+                    <h3 class="team-name" data-i18n="team.barry.name">Barry O'Neill</h3>
+                    <p class="role" data-i18n="team.barry.role">Senior Advisor</p>
+                    <p class="title" data-i18n="team.barry.title">Global Entrepreneur & TechStars Mentor</p>
+                    <div class="badge">
+                        <span data-i18n="team.barry.badge">🌍 European Network Lead</span>
+                    </div>
+                    <p class="description" data-i18n="team.barry.description">
+                        Former corporate development leader with global M&A experience
+                    </p>
+                </div>
+                
+                <!-- Shu Koike -->
+                <div class="team-card founder">
+                    <img src="images/shu.png" alt="Shu Koike" class="team-photo" loading="lazy">
+                    <h3 class="team-name" data-i18n="team.shu.name">Shu Koike</h3>
+                    <p class="role" data-i18n="team.shu.role">Career Advisor</p>
+                    <p class="title" data-i18n="team.shu.title">Cross-functional HR & Education Specialist</p>
+                    <div class="badge">
+                        <span data-i18n="team.shu.badge">✨ Direct Support for All Cases</span>
+                    </div>
+                    <p class="description" data-i18n="team.shu.description">
+                        1,000+ career consultations completed
+                    </p>
+                </div>
+            </div>
+            
+            <div class="team-cta">
+                <a href="#register" class="btn-primary" data-i18n="hero.cta">Start Free Career Consultation</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <!-- 
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title" data-i18n="value.title">
+                Why AI Engineers Choose Us
+            </h2>
+            <p class="section-subtitle" data-i18n="value.subtitle">
+                Special value realized through Value Create × Tokyo AI Community synergy
+            </p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-number">01</div>
+                    <h3 class="benefit-title" data-i18n="value.benefit1.title">Corporate Value Analysis Professionals</h3>
+                    <p class="benefit-description" data-i18n="value.benefit1.description">
+                        Analyzing the true value of companies using IR consulting expertise.
+                        Comprehensive evaluation of not only finances but also management philosophy, corporate culture, and growth potential
+                    </p>
+                    <ul class="benefit-list" data-i18n-list="value.benefit1.list">
+                        <li>Visualizing companies' "invisible assets"</li>
+                        <li>Selection of visionary companies</li>
+                        <li>Support for long-term career building</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-number">02</div>
+                    <h3 class="benefit-title" data-i18n="value.benefit2.title">Support for Foreign Engineers</h3>
+                    <p class="benefit-description" data-i18n="value.benefit2.description">
+                        Comprehensive support specialized for foreign engineers in Japan.
+                        Full support to overcome language, visa, and cultural barriers
+                    </p>
+                    <ul class="benefit-list" data-i18n-list="value.benefit2.list">
+                        <li>Career consulting in English and Chinese</li>
+                        <li>Visa support and residence status consultation</li>
+                        <li>Japanese corporate culture onboarding support</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-number">03</div>
+                    <h3 class="benefit-title" data-i18n="value.benefit3.title">Individual Career Consulting</h3>
+                    <p class="benefit-description" data-i18n="value.benefit3.description">
+                        Individual support tailored to each person's career plan.
+                        Accompanying you from interview preparation to post-employment follow-up
+                    </p>
+                    <ul class="benefit-list" data-i18n-list="value.benefit3.list">
+                        <li>Career plan design and future potential evaluation</li>
+                        <li>Interview preparation and portfolio creation support</li>
+                        <li>3-month follow-up after joining</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+
+    <!-- Success Stories Section - REMOVED (削除されました) -->
+    <!-- 
+    <section class="success" id="success">
+        Tokyo AI Communityメンバーのキャリアストーリーセクションは削除されました
+    </section>
+    -->
+
+    <!-- Process Section - REMOVED (最短2週間で採用を実現する4ステップ - 簡潔な説明で十分なため削除) -->
+    <!--
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">キャリア支援の流れ</h2>
+            <p class="section-subtitle">あなたのペースで理想のキャリアを実現</p>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">STEP 01</div>
+                    <h3 class="step-title">無料登録</h3>
+                    <p class="step-description">簡単登録でスタート</p>
+                    <p class="step-time">すぐに開始</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">STEP 02</div>
+                    <h3 class="step-title">キャリア相談</h3>
+                    <p class="step-description">専門アナリストと相談</p>
+                    <p class="step-time">じっくり検討</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">STEP 03</div>
+                    <h3 class="step-title">企業紹介</h3>
+                    <p class="step-description">成長企業をご紹介</p>
+                    <p class="step-time">マッチング次第</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">STEP 04</div>
+                    <h3 class="step-title">内定・入社</h3>
+                    <p class="step-description">最後までサポート</p>
+                    <p class="step-time">安心の伴走</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Registration Section -->
+    <section class="register" id="register">
+        <div class="container">
+            <div class="register-content">
+                <h2 class="register-title" data-i18n="register.title">Start Free Consultation</h2>
+                <p class="register-subtitle" data-i18n="register.subtitle">Complete in 30 seconds</p>
+                
+                <form class="contact-form" id="registerForm">
+                    <div class="form-group">
+                        <label><span data-i18n="register.form.name">Name</span> <span class="required">*</span></label>
+                        <input type="text" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><span data-i18n="register.form.email">Email</span> <span class="required">*</span></label>
+                        <input type="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><span data-i18n="register.form.linkedin">LinkedIn Profile</span> <span style="color: #64748b; font-size: 0.85rem;">(Optional)</span></label>
+                        <input type="url" placeholder="https://linkedin.com/in/yourprofile" data-i18n-placeholder="register.form.linkedinPlaceholder">
+                    </div>
+                    
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">
+                            <a href="terms.html" target="_blank" data-i18n="register.form.termsLink">Terms of Service</a>・<a href="privacy-policy.html" target="_blank" data-i18n="register.form.privacyLink">Privacy Policy</a> <span data-i18n="register.form.terms">I agree to the</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span data-i18n="register.form.submit">Start Free Consultation</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
+            
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary class="faq-question" data-i18n="faq.q1.question">
+                        Is the service really free?
+                    </summary>
+                    <div class="faq-answer" data-i18n="faq.q1.answer">
+                        Yes, it's completely free for job seekers. We receive fees from hiring companies.
+                    </div>
+                </details>
+                
+                <details class="faq-item">
+                    <summary class="faq-question" data-i18n="faq.q4.question">
+                        Can I consult while employed?
+                    </summary>
+                    <div class="faq-answer" data-i18n="faq.q4.answer">
+                        Yes, all consultations are confidential. Your current employer won't be informed.
+                    </div>
+                </details>
+                
+                <details class="faq-item">
+                    <summary class="faq-question" data-i18n="faq.q2.question">
+                        What level of experience is required?
+                    </summary>
+                    <div class="faq-answer" data-i18n="faq.q2.answer">
+                        We support all levels from new graduates to senior engineers.
+                    </div>
+                </details>
+                
+                <details class="faq-item">
+                    <summary class="faq-question" data-i18n="faq.q5.question">
+                        Which areas do you cover?
+                    </summary>
+                    <div class="faq-answer" data-i18n="faq.q5.answer">
+                        Primarily Tokyo area, but remote positions are available nationwide.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Minimal) -->
+    <footer class="footer-minimal">
+        <div class="container">
+            <div class="footer-minimal-content">
+                <!-- Left: Brand and License -->
+                <div class="footer-minimal-left">
+                    <div class="footer-minimal-brand">
+                        <span class="footer-logo">AI Talent Bridge</span>
+                        <span class="footer-badge" data-i18n="nav.badge">Tokyo AI Community Official Partner</span>
+                    </div>
+                    <p class="footer-company">
+                        <span data-i18n="footer.companyName">Value Create Inc.</span> · 
+                        <span data-i18n="footer.license">Licensed Employment Placement Business: 13-Yu-301304</span>
+                    </p>
+                </div>
+                
+                <!-- Right: Essential Links -->
+                <div class="footer-minimal-links">
+                    <a href="privacy-policy.html" target="_blank" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="terms.html" target="_blank" data-i18n="footer.terms">Terms of Service</a>
+                    <a href="mailto:contact@aitalentbridge.com" data-i18n="footer.contact">Contact</a>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-minimal-bottom">
+                <p data-i18n="footer.copyright">© 2024 AI Talent Bridge by Value Create Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA for Mobile -->
+    <div class="floating-cta">
+        <a href="#register" class="btn-floating" data-i18n="nav.register">
+            Free Registration
+        </a>
+    </div>
+    
+    <!-- Lightweight JavaScript -->
+    <script src="translations.js"></script>
+    <script src="language-switcher.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
