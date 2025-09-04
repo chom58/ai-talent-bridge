@@ -13,9 +13,9 @@ const translations = {
         // Hero Section
         hero: {
             subtitle: "Your Next Career Stage in AI Engineering",
-            title1: "AI Career Partner for",
-            title2: "Global Success",
-            description: "As Tokyo AI Community's official partner,\nwe connect exceptional AI talent with ideal opportunities.",
+            title1: "Specialized Career Partner",
+            title2: "for AI Engineers",
+            description: "As Tokyo AI Community's official partner,\nwe create connections with companies perfect for you.",
             cta: "Start Free Career Consultation",
             features: {
                 multilingual: "Multilingual",
@@ -27,23 +27,23 @@ const translations = {
         
         // Trust Section
         trust: {
-            title: "Why Choose Us",
+            title: "Why AI Engineers Choose Us",
             subtitle: "Unique value through Tokyo AI Community partnership",
             card1: {
-                title: "100% Free & Transparent",
-                description: "No fees even after successful placement. No hidden costs."
+                title: "Deep Analysis",
+                description: "Evaluate invisible assets to find high-growth companies."
             },
             card2: {
-                title: "Tokyo AI Community Official",
-                description: "Access to 1,000+ AI engineer network"
+                title: "Proven Track",
+                description: "From enterprises to startups, leveraging value creation insights."
             },
             card3: {
-                title: "Multinational Team Support",
-                description: "Members from 10+ countries. Visa consultation available"
+                title: "Full Support",
+                description: "Creator × consulting perspective tells your story."
             },
             card4: {
-                title: "Data-Driven Analysis",
-                description: "Quantitative evaluation of tech stack, growth, and culture"
+                title: "Data-Driven",
+                description: "Tech stack, growth, and culture evaluation"
             }
         },
         
@@ -67,8 +67,8 @@ const translations = {
         
         // Value Create Section
         value: {
-            title: "Why AI Engineers Choose Us",
-            subtitle: "Special value realized through Value Create × Tokyo AI Community synergy",
+            title: "3 Reasons to Choose Us",
+            subtitle: "Comprehensive support specialized for AI engineers",
             step1: {
                 title: "Career Consultation",
                 description: "Understanding your career vision"
@@ -94,7 +94,7 @@ const translations = {
                 title: "Support for Foreign Engineers",
                 description: "Comprehensive support specialized for foreign engineers in Japan. Full support to overcome language, visa, and cultural barriers",
                 list: [
-                    "Career consulting in English and Chinese",
+                    "Multilingual career consulting available",
                     "Visa support and residence status consultation",
                     "Japanese corporate culture onboarding support"
                 ]
@@ -232,23 +232,23 @@ const translations = {
         
         // Trust Section
         trust: {
-            title: "選ばれる4つの理由",
+            title: "なぜAIエンジニアが選ぶのか",
             subtitle: "Tokyo AI Communityとの連携が生む独自の価値",
             card1: {
-                title: "完全無料・透明性100%",
-                description: "転職成功後も費用は一切不要。隠れたコストなし"
+                title: "企業分析力",
+                description: "見えない資産まで評価。成長性の高い企業と出会えます。"
             },
             card2: {
-                title: "Tokyo AI Community公認",
-                description: "1,000名超のAIエンジニアネットワークを活用"
+                title: "幅広い実績",
+                description: "上場企業からスタートアップまで、価値創造の知見を活かして提案。"
             },
             card3: {
-                title: "多国籍チーム対応",
-                description: "10カ国以上のメンバーが在籍。ビザ相談も対応"
+                title: "伴走サポート",
+                description: "クリエイター×コンサルタントの視点で強みをストーリー化。"
             },
             card4: {
-                title: "データドリブンな企業分析",
-                description: "技術スタック・成長性・カルチャーを定量評価"
+                title: "データ分析",
+                description: "技術・成長性・カルチャーを定量評価"
             }
         },
         
@@ -272,8 +272,8 @@ const translations = {
         
         // Value Create Section
         value: {
-            title: "なぜAIエンジニアが選ぶのか",
-            subtitle: "Value Create × Tokyo AI Communityのシナジーで実現する特別な価値",
+            title: "選ばれる3つの理由",
+            subtitle: "AIエンジニア専門の包括的なサポート",
             step1: {
                 title: "キャリア相談",
                 description: "あなたのビジョンを理解"
@@ -299,7 +299,7 @@ const translations = {
                 title: "外国人エンジニア向けサポート",
                 description: "日本在住の外国人エンジニアに特化した手厚いフォロー。言語、ビザ、文化の壁を乗り越える全面支援",
                 list: [
-                    "英語・中国語対応のキャリアコンサルティング",
+                    "多言語対応のキャリアコンサルティング",
                     "ビザサポート・在留資格相談",
                     "日本企業文化のオンボーディング支援"
                 ]

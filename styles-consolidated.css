@@ -2,12 +2,13 @@
 
 /* CSS Variables - Professional & Modern Design System */
 :root {
-    /* Primary Colors - Purple Gradient Theme */
-    --primary: #7c3aed;
-    --primary-light: #a78bfa;
-    --primary-dark: #5b21b6;
-    --accent: #ffd700;  /* Gold accent for premium feel */
-    --accent-light: #ffed4a;
+    /* Primary Colors - Cyber Theme for PROJECT GENE */
+    --primary: #00D9FF;  /* Cyber Cyan */
+    --primary-light: #66E5FF;
+    --primary-dark: #0099CC;
+    --accent: #39FF14;  /* Neon Green */
+    --accent-light: #7FFF5C;
+    --secondary: #E5E4E2;  /* Platinum Silver */
     
     /* Semantic Colors */
     --success: #10b981;
@@ -24,20 +25,23 @@
     --gray-100: #f3f4f6;
     --white: #ffffff;
     
-    /* Gradients - Premium Look */
-    --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
-    --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-accent: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
-    --gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    /* Gradients - Cyber/Neon Theme */
+    --gradient-primary: linear-gradient(135deg, #00D9FF 0%, #39FF14 100%);
+    --gradient-secondary: linear-gradient(135deg, #00D9FF 0%, #0099CC 100%);
+    --gradient-accent: linear-gradient(135deg, #39FF14 0%, #7FFF5C 100%);
+    --gradient-dark: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
     
-    /* Enhanced Shadows */
+    /* Enhanced Shadows & Neon Glows */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
     --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
     --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
-    --shadow-glow: 0 0 40px rgba(124, 58, 237, 0.3);
+    --shadow-glow: 0 0 40px rgba(0, 217, 255, 0.5);
+    --shadow-glow-green: 0 0 40px rgba(57, 255, 20, 0.5);
+    --shadow-neon-cyan: 0 0 20px rgba(0, 217, 255, 0.8);
+    --shadow-neon-green: 0 0 20px rgba(57, 255, 20, 0.8);
     
     /* Typography Scale */
     --font-xs: 0.75rem;
@@ -228,7 +232,7 @@ body {
     position: relative;
     z-index: 2;
     padding: 4rem 2rem;
-    animation: fadeInUp 1s ease-out;
+    /* animation: fadeInUp */ 1s ease-out;
 }
 
 @keyframes fadeInUp {
@@ -346,6 +350,13 @@ body {
     position: relative;
     z-index: 1;
     color: var(--white);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .community-badge {
@@ -735,7 +746,7 @@ body {
     margin-top: 15px;
     padding-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    animation: fadeIn 0.3s ease;
+    /* animation: fadeIn 0.3s ease; */
 }
 
 .team-detail.show {
@@ -2856,7 +2867,7 @@ a:hover {
 
 /* Reduce background image opacity */
 .hero-bg-image {
-    opacity: 0.3 !important;
+    opacity: 1 !important;
 }
 
 /* Team section background */
@@ -3428,7 +3439,7 @@ a:hover {
     position: relative !important;
     min-height: 100vh !important;
     overflow: hidden !important;
-    background-color: #1e293b !important;
+    background: url('./images/project-gene-background.png') center/cover no-repeat !important;
     display: flex !important;
     align-items: center !important;
 }
@@ -3443,11 +3454,11 @@ a:hover {
     left: 25% !important;  /* Shift more to the right */
     width: 85% !important;  /* Keep width */
     height: 100% !important;
-    background-image: url('./hero-bg-fixed.png') !important;  /* Updated image without typo */
+    background-image: url('./images/project-gene-background.png') !important;  /* Using Project Gene background */
     background-size: cover !important;  /* Back to cover for proper sizing */
     background-position: left center !important;  /* Align left side of shifted image */
     background-repeat: no-repeat !important;
-    opacity: 0.75 !important;  /* Slightly more visible than before */
+    opacity: 1 !important;  /* Full opacity - no transparency */
     z-index: 1 !important;
 }
 
@@ -3532,7 +3543,7 @@ a:hover {
     letter-spacing: 0.12em !important;
     margin-bottom: 2.5rem !important;  /* Increased spacing below subtitle */
     text-transform: uppercase !important;
-    animation: fadeInUp 0.6s ease-out !important;
+    /* animation: fadeInUp */ 0.6s ease-out !important;
 }
 
 /* Main title styling */
@@ -3543,7 +3554,7 @@ a:hover {
     margin-top: 1.5rem !important;  /* Add space above title */
     margin-bottom: 2rem !important;
     color: #FFFFFF !important;
-    animation: fadeInUp 0.8s ease-out 0.1s both !important;
+    /* animation: fadeInUp */ 0.8s ease-out 0.1s both !important;
     white-space: pre-line !important;  /* Force line breaks to work */
 }
 
@@ -3568,7 +3579,7 @@ a:hover {
     color: rgba(255, 255, 255, 0.85) !important;
     margin: 1.5rem 0 2rem 0 !important;
     max-width: 600px !important;
-    animation: fadeInUp 1s ease-out 0.2s both !important;
+    /* animation: fadeInUp */ 1s ease-out 0.2s both !important;
 }
 
 /* ========================================
@@ -3577,37 +3588,41 @@ a:hover {
 
 .trust-badges {
     display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 1rem !important;
+    flex-wrap: nowrap !important; /* 1行に固定 */
+    gap: 0.8rem !important; /* ギャップを少し狭く */
     margin: 2rem 0 !important;
-    animation: fadeInUp 1.2s ease-out 0.3s both !important;
+    /* animation: fadeInUp */ 1.2s ease-out 0.3s both !important;
 }
 
 .trust-badges .badge {
-    padding: 0.6rem 1.2rem !important;
-    background: rgba(15, 23, 42, 0.8) !important;
-    backdrop-filter: blur(16px) !important;
-    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+    padding: 0.5rem 1rem !important; /* パディングを少し減らす */
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(16, 185, 129, 0.4) !important;
     border-radius: 9999px !important;
-    font-size: 0.9rem !important;
-    font-weight: 500 !important;
+    font-size: 0.85rem !important; /* フォントサイズを少し小さく */
+    white-space: nowrap !important; /* テキストの改行を防ぐ */
+    font-weight: 600 !important;
     color: #FFFFFF !important;
     transition: all 0.3s ease !important;
-    white-space: nowrap !important;
     position: relative !important;
     overflow: hidden !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
 .trust-badges .badge:hover {
-    background: rgba(16, 185, 129, 0.15) !important;
+    background: rgba(16, 185, 129, 0.2) !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.25) !important;
-    border-color: rgba(16, 185, 129, 0.5) !important;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3) !important;
+    border-color: rgba(16, 185, 129, 0.6) !important;
 }
 
 .badge-icon {
-    font-size: 1.1rem !important;
-    margin-right: 0.25rem !important;
+    font-size: 1.2rem !important;
+    margin-right: 0.4rem !important;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4)) !important;
 }
 
 /* ========================================
@@ -3640,7 +3655,7 @@ a:hover {
         inset 0 2px 4px rgba(255, 255, 255, 0.3),
         inset 0 -2px 4px rgba(0, 0, 0, 0.15) !important;  /* Multiple shadows for depth */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    animation: fadeInUp 1.4s ease-out 0.4s both, pulse 2s infinite 1.5s !important;
+    /* animation: fadeInUp */ 1.4s ease-out 0.4s both, pulse 2s infinite 1.5s !important;
     position: relative !important;
     z-index: 10 !important;
     isolation: isolate !important;
@@ -3810,7 +3825,7 @@ a:hover {
         width: 100% !important;
         background-size: cover !important;
         background-position: center center !important;
-        opacity: 0.35 !important;  /* Slightly more visible */
+        opacity: 1 !important;  /* Full visibility */
     }
     
     .hero-overlay {
@@ -3853,6 +3868,7 @@ a:hover {
     
     .trust-badges {
         justify-content: center !important;
+        flex-wrap: wrap !important; /* タブレットでは折り返し可能 */
     }
 }
 
@@ -3884,18 +3900,19 @@ a:hover {
     }
     
     .trust-badges {
-        flex-direction: column !important;
+        flex-direction: row !important; /* 小画面でも横並びを維持 */
+        flex-wrap: wrap !important; /* 必要に応じて折り返し */
         align-items: center !important;
+        justify-content: center !important;
         gap: 0.5rem !important;
     }
     
     .trust-badges .badge {
         width: fit-content !important;
-        min-width: 160px !important;
         text-align: center !important;
         justify-content: center !important;
-        padding: 0.5rem 1rem !important;
-        font-size: 0.85rem !important;
+        padding: 0.4rem 0.8rem !important; /* さらにコンパクトに */
+        font-size: 0.75rem !important; /* 小画面用のフォントサイズ */
     }
     
     .hero-background {
@@ -3913,7 +3930,7 @@ a:hover {
         width: 100% !important;
         max-width: 280px !important;
         /* Reduce pulse animation on mobile for better performance */
-        animation: fadeInUp 1.4s ease-out 0.4s both !important;
+        /* animation: fadeInUp */ 1.4s ease-out 0.4s both !important;
     }
     
     /* Disable pulse on very small screens */
@@ -4730,9 +4747,11 @@ body .hero-section .hero-content .main-title br {
     font-weight: 700 !important;
     color: #FFFFFF !important;
     margin-bottom: 12px !important;
+    text-align: center !important;
     line-height: 1.4 !important;
     letter-spacing: -0.01em !important;
-    padding-right: 60px !important; /* Space for badge */
+    padding-right: 0 !important; /* Remove padding for proper centering */
+    padding-left: 0 !important; /* Ensure symmetrical padding */
     font-feature-settings: 'palt' 1 !important; /* 文字詰め */
     word-break: keep-all !important; /* 単語単位で改行 */
     min-height: 2.8em !important; /* 2行分の高さを確保 */
@@ -4888,8 +4907,7 @@ body .hero-section .hero-content .main-title br {
 
 .trust-card,
 .trust-item {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 1;
 }
 
 .trust-card:nth-child(1),
@@ -5261,8 +5279,7 @@ body .hero-section .hero-content .main-title br {
 }
 
 .step {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 1;
 }
 
 .step:nth-child(1) {

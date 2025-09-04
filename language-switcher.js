@@ -1,10 +1,20 @@
 // Language Switcher Logic
-let currentLang = 'en'; // Default to English
+let currentLang = 'ja'; // Default to Japanese (日本語)
 
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('🌐 Language Switcher: Initializing...');
+    
     // Check for saved language preference
-    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    const savedLang = localStorage.getItem('preferredLang') || 'ja';
+    console.log('🌐 Language Switcher: Saved language =', savedLang);
+    
+    // Check if translations are loaded
+    if (typeof translations === 'undefined') {
+        console.error('❌ Language Switcher: translations not loaded!');
+        return;
+    }
+    console.log('✅ Language Switcher: translations loaded');
     
     // Set initial language
     switchLanguage(savedLang);
@@ -19,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Main language switching function
 function switchLanguage(lang) {
+    console.log('🌐 Language Switcher: Switching to', lang);
     currentLang = lang;
     
     // Update button states
@@ -43,13 +54,33 @@ function switchLanguage(lang) {
 // Update all content based on selected language
 function updatePageContent(lang) {
     const t = translations[lang];
+    console.log('🌐 Language Switcher: Updating content to', lang);
+    
+    // Debug: Check trust section translations
+    console.log('📝 Trust card1 title:', t.trust?.card1?.title);
+    console.log('📝 Trust card1 description:', t.trust?.card1?.description);
     
     // Update all elements with data-i18n attribute
-    document.querySelectorAll('[data-i18n]').forEach(element => {
+    const elements = document.querySelectorAll('[data-i18n]');
+    console.log(`📊 Found ${elements.length} elements with data-i18n`);
+    
+    // Check specifically for trust cards
+    const trustElements = document.querySelectorAll('[data-i18n^="trust"]');
+    console.log(`🔍 Found ${trustElements.length} trust-related elements`);
+    
+    elements.forEach(element => {
         const key = element.dataset.i18n;
         const value = getNestedProperty(t, key);
         if (value) {
+            const oldText = element.textContent;
             element.textContent = value;
+            if (key.startsWith('trust.card')) {
+                console.log(`✅ Updated ${key}:`);
+                console.log(`   Old: ${oldText}`);
+                console.log(`   New: ${value.substring(0, 50)}...`);
+            }
+        } else if (key.startsWith('trust')) {
+            console.log(`❌ No translation found for ${key}`);
         }
     });
     
