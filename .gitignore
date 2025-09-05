@@ -57,3 +57,32 @@ archived_css/
 
 # Netlify
 .netlify/
+
+# Test and temporary files
+test-*.html
+*-test.html
+*-backup.html
+*-optimized.html
+simple-test.html
+background-check.html
+version-comparison.html
+
+# Optimization scripts and reports
+optimize-*.js
+image-optimization-*.html
+image-optimization-*.json
+create-minified-css.js
+DEPLOYMENT_GUIDE.md
+
+# Temporary CSS files
+final-hero.css
+styles-main.css
+responsive-enhanced.css
+
+# Large unoptimized images (keep only optimized versions)
+career-path-wide.png
+hero-background.png
+
+# Background loader (removed in favor of defer)
+force-load.js
+background-loader.js
