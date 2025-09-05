@@ -587,9 +587,12 @@
 
     <!-- Hero Section -->
     <section class="hero-section" id="home">
-        <!-- Background Image Layer -->
+        <!-- Background Image Layer with WebP support -->
         <div class="hero-background-layer">
-            <img src="images/project-gene-background.png?v=20250904" alt="" class="hero-bg-image">
+            <picture>
+                <source srcset="images/project-gene-background.webp?v=20250905" type="image/webp">
+                <img src="images/project-gene-background.png?v=20250905" alt="" class="hero-bg-image" loading="eager">
+            </picture>
         </div>
         <div class="hero-content">
             <!-- Left side: Text content -->
