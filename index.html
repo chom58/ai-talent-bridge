@@ -185,12 +185,28 @@
         .hero-section {
             margin-top: 0 !important; /* ヘッダーとの隙間を削除 */
             padding-top: 0 !important; /* パディングも削除 */
-            background: url('./images/project-gene-background.png') center/cover no-repeat !important;
             min-height: calc(100vh - 40px) !important; /* 少し高さを減らして上寄りに */
             position: relative !important;
             overflow: hidden !important;
             display: flex !important;
             align-items: center !important; /* 垂直中央配置 */
+        }
+        
+        /* Background Image Layer */
+        .hero-background-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+        
+        .hero-bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
         
         /* Add subtle overlay for better readability */
@@ -213,14 +229,12 @@
         /* Ensure content is above overlay */
         .hero-content {
             position: relative !important;
-            z-index: 2 !important;
+            z-index: 10 !important;
             padding-top: 80px !important; /* ヘッダーの高さ分のみ、余白を削減 */
         }
         
-        /* Hide the old background layer since we're using CSS background */
-        .hero-background-layer {
-            display: none !important;
-        }
+        /* Remove this rule - we need to show the background layer */
+        /* .hero-background-layer was hidden before - now showing it */
         
         /* Make hero-content transparent to show background */
         .hero-content-inner {
