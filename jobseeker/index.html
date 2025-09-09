@@ -13,8 +13,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="styles-consolidated.css">
+    <!-- Optimized Stylesheet -->
+    <link rel="stylesheet" href="styles-optimized.css">
+    
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="images/project-gene-background.webp" media="(min-width: 768px)">
     
     <!-- Force CTA button styles and title fix -->
     <style>
@@ -492,7 +495,7 @@
             .hero-section {
                 margin-top: 0 !important; /* ヘッダーとの隙間を削除 */
                 padding-top: 0 !important; /* パディングも削除 */
-                background: url('./images/project-gene-background.png') center/cover no-repeat !important;
+                background: url('./images/project-gene-background.webp') center/cover no-repeat !important;
             }
             
             .hero-content {
@@ -1047,7 +1050,8 @@
     <!-- Optimized JavaScript Loading with defer -->
     <script src="translations.js?v=202509050145" defer></script>
     <script src="language-switcher.js?v=202509050145" defer></script>
-    <script src="script.js?v=202509050145" defer></script>
+    <!-- Optimized Scripts -->
+    <script src="script-optimized.js" defer></script>
     <script src="mobile-menu.js?v=202509050145" defer></script>
 </body>
 </html>
