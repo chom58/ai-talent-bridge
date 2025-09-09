@@ -1,0 +1,193 @@
+<!-- Pricing Visual - AI Talent Bridge -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs>
+    <!-- Gradients for Pricing Cards -->
+    <linearGradient id="starter-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#64748B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#475569;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="professional-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="enterprise-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Animated Glow -->
+    <filter id="pricing-glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 .5 .5 .5 1"/>
+      </feComponentTransfer>
+    </filter>
+    
+    <!-- Card Shadow -->
+    <filter id="card-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="0" dy="10" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background Pattern -->
+  <pattern id="price-grid" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#1E293B" stroke-width="0.5" opacity="0.3"/>
+    <line x1="0" y1="0" x2="0" y2="50" stroke="#1E293B" stroke-width="0.5" opacity="0.3"/>
+  </pattern>
+  <rect width="1200" height="600" fill="url(#price-grid)"/>
+  
+  <!-- Starter Plan -->
+  <g transform="translate(150, 100)">
+    <rect x="0" y="0" width="250" height="400" rx="20" fill="#0F172A" stroke="url(#starter-grad)" stroke-width="2" filter="url(#card-shadow)"/>
+    
+    <!-- Header -->
+    <rect x="0" y="0" width="250" height="80" rx="20" fill="url(#starter-grad)" opacity="0.1"/>
+    <text x="125" y="35" fill="#94A3B8" font-size="18" font-weight="bold" text-anchor="middle">スターター</text>
+    <text x="125" y="60" fill="#64748B" font-size="12" text-anchor="middle">小規模チーム向け</text>
+    
+    <!-- Price -->
+    <text x="125" y="120" fill="#94A3B8" font-size="14" text-anchor="middle">成功報酬型</text>
+    <text x="125" y="150" fill="#CBD5E1" font-size="36" font-weight="bold" text-anchor="middle">15%</text>
+    <text x="125" y="175" fill="#64748B" font-size="12" text-anchor="middle">年収の15%</text>
+    
+    <!-- Features -->
+    <g transform="translate(30, 200)">
+      <circle cx="10" cy="10" r="5" fill="#10B981" opacity="0.5"/>
+      <text x="25" y="14" fill="#94A3B8" font-size="12">1-2名の採用</text>
+      
+      <circle cx="10" cy="40" r="5" fill="#10B981" opacity="0.5"/>
+      <text x="25" y="44" fill="#94A3B8" font-size="12">48時間以内マッチング</text>
+      
+      <circle cx="10" cy="70" r="5" fill="#10B981" opacity="0.5"/>
+      <text x="25" y="74" fill="#94A3B8" font-size="12">90日間保証</text>
+      
+      <circle cx="10" cy="100" r="5" fill="#64748B" opacity="0.3"/>
+      <text x="25" y="104" fill="#64748B" font-size="12">基本サポート</text>
+    </g>
+    
+    <!-- Button -->
+    <rect x="25" y="340" width="200" height="40" rx="20" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+    <text x="125" y="365" fill="#94A3B8" font-size="14" text-anchor="middle">選択する</text>
+  </g>
+  
+  <!-- Professional Plan (Recommended) -->
+  <g transform="translate(475, 80)">
+    <!-- Glow Effect -->
+    <rect x="-10" y="-10" width="270" height="440" rx="20" fill="none" stroke="#00D9FF" stroke-width="1" opacity="0.3" filter="url(#pricing-glow)">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="0" y="0" width="250" height="420" rx="20" fill="#0F172A" stroke="url(#professional-grad)" stroke-width="3" filter="url(#card-shadow)"/>
+    
+    <!-- Recommended Badge -->
+    <rect x="75" y="-15" width="100" height="30" rx="15" fill="url(#professional-grad)"/>
+    <text x="125" y="3" fill="white" font-size="12" font-weight="bold" text-anchor="middle">おすすめ</text>
+    
+    <!-- Header -->
+    <rect x="0" y="0" width="250" height="80" rx="20" fill="url(#professional-grad)" opacity="0.2"/>
+    <text x="125" y="35" fill="#00D9FF" font-size="20" font-weight="bold" text-anchor="middle">プロフェッショナル</text>
+    <text x="125" y="60" fill="#0EA5E9" font-size="12" text-anchor="middle">成長企業向け</text>
+    
+    <!-- Price -->
+    <text x="125" y="120" fill="#00D9FF" font-size="14" text-anchor="middle">月額制 + 成功報酬</text>
+    <text x="125" y="150" fill="#00D9FF" font-size="40" font-weight="bold" text-anchor="middle">30万</text>
+    <text x="125" y="175" fill="#0EA5E9" font-size="12" text-anchor="middle">月額 + 年収の10%</text>
+    
+    <!-- Features -->
+    <g transform="translate(30, 200)">
+      <circle cx="10" cy="10" r="5" fill="#10B981"/>
+      <text x="25" y="14" fill="#CBD5E1" font-size="12">3-10名の採用</text>
+      
+      <circle cx="10" cy="40" r="5" fill="#10B981"/>
+      <text x="25" y="44" fill="#CBD5E1" font-size="12">24時間以内マッチング</text>
+      
+      <circle cx="10" cy="70" r="5" fill="#10B981"/>
+      <text x="25" y="74" fill="#CBD5E1" font-size="12">180日間保証</text>
+      
+      <circle cx="10" cy="100" r="5" fill="#10B981"/>
+      <text x="25" y="104" fill="#CBD5E1" font-size="12">専任コンサルタント</text>
+      
+      <circle cx="10" cy="130" r="5" fill="#10B981"/>
+      <text x="25" y="134" fill="#CBD5E1" font-size="12">技術面接サポート</text>
+    </g>
+    
+    <!-- Button -->
+    <rect x="25" y="360" width="200" height="40" rx="20" fill="url(#professional-grad)"/>
+    <text x="125" y="385" fill="white" font-size="14" font-weight="bold" text-anchor="middle">無料相談する</text>
+  </g>
+  
+  <!-- Enterprise Plan -->
+  <g transform="translate(800, 100)">
+    <rect x="0" y="0" width="250" height="400" rx="20" fill="#0F172A" stroke="url(#enterprise-grad)" stroke-width="2" filter="url(#card-shadow)"/>
+    
+    <!-- Header -->
+    <rect x="0" y="0" width="250" height="80" rx="20" fill="url(#enterprise-grad)" opacity="0.1"/>
+    <text x="125" y="35" fill="#F59E0B" font-size="18" font-weight="bold" text-anchor="middle">エンタープライズ</text>
+    <text x="125" y="60" fill="#D97706" font-size="12" text-anchor="middle">大企業向け</text>
+    
+    <!-- Price -->
+    <text x="125" y="120" fill="#F59E0B" font-size="14" text-anchor="middle">カスタムプラン</text>
+    <text x="125" y="150" fill="#FCD34D" font-size="32" font-weight="bold" text-anchor="middle">要相談</text>
+    <text x="125" y="175" fill="#D97706" font-size="12" text-anchor="middle">ボリューム割引あり</text>
+    
+    <!-- Features -->
+    <g transform="translate(30, 200)">
+      <circle cx="10" cy="10" r="5" fill="#10B981"/>
+      <text x="25" y="14" fill="#FEF3C7" font-size="12">無制限の採用</text>
+      
+      <circle cx="10" cy="40" r="5" fill="#10B981"/>
+      <text x="25" y="44" fill="#FEF3C7" font-size="12">即日マッチング</text>
+      
+      <circle cx="10" cy="70" r="5" fill="#10B981"/>
+      <text x="25" y="74" fill="#FEF3C7" font-size="12">365日間保証</text>
+      
+      <circle cx="10" cy="100" r="5" fill="#10B981"/>
+      <text x="25" y="104" fill="#FEF3C7" font-size="12">専任チーム配置</text>
+      
+      <circle cx="10" cy="130" r="5" fill="#10B981"/>
+      <text x="25" y="134" fill="#FEF3C7" font-size="12">カスタムAI開発</text>
+    </g>
+    
+    <!-- Button -->
+    <rect x="25" y="340" width="200" height="40" rx="20" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
+    <text x="125" y="365" fill="#F59E0B" font-size="14" text-anchor="middle">お問い合わせ</text>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <g opacity="0.3">
+    <!-- Connecting Lines -->
+    <line x1="400" y1="300" x2="475" y2="300" stroke="#00D9FF" stroke-width="1" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" values="0;10" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="725" y1="300" x2="800" y2="300" stroke="#F59E0B" stroke-width="1" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" values="0;10" dur="1s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- Floating Particles -->
+    <circle cx="100" cy="200" r="2" fill="#00D9FF">
+      <animate attributeName="cy" values="200;180;200" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="400" r="2" fill="#F59E0B">
+      <animate attributeName="cy" values="400;380;400" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Value Indicators -->
+  <g transform="translate(50, 520)">
+    <text x="0" y="0" fill="#64748B" font-size="14">すべてのプランに含まれる：</text>
+    <text x="200" y="0" fill="#10B981" font-size="14">✓ AI マッチング</text>
+    <text x="350" y="0" fill="#10B981" font-size="14">✓ スキル評価</text>
+    <text x="480" y="0" fill="#10B981" font-size="14">✓ 面接サポート</text>
+    <text x="620" y="0" fill="#10B981" font-size="14">✓ アフターフォロー</text>
+  </g>
+</svg>

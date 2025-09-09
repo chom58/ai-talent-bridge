@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Talent Bridge - Tokyo AI Community 正式提携｜日本唯一のAI人材採用支援</title>
+    <meta name="description" content="採用成功まで費用0円。Tokyo AI Community正式提携の日本唯一のAI人材採用パートナー。FAANG/メガベンチャー450名以上のタレントプールから最短2週間で採用実現。">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --navy: #0F172A;
+            --navy-light: #1E293B;
+            --electric-blue: #00D9FF;
+            --electric-blue-dark: #0099CC;
+            --gold: #F59E0B;
+            --white: #FFFFFF;
+            --gray-light: #F3F4F6;
+            --gray: #9CA3AF;
+            --gradient-tech: linear-gradient(135deg, var(--navy) 0%, var(--electric-blue-dark) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--gold) 0%, #DC2626 100%);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--navy);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+        
+        /* パーティクル背景 */
+        .particles-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .particles-bg canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--electric-blue);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: float 20s infinite;
+        }
+        
+        .particle-line {
+            position: absolute;
+            height: 1px;
+            background: var(--electric-blue);
+            opacity: 0;
+            transform-origin: left center;
+            animation: connect 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-100px) translateX(50px);
+            }
+            50% {
+                transform: translateY(-50px) translateX(-50px);
+            }
+            75% {
+                transform: translateY(-150px) translateX(30px);
+            }
+        }
+        
+        @keyframes connect {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-tech);
+            animation: gradient-shift 10s ease infinite;
+            color: var(--white);
+            padding: 2rem;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% {
+                background: linear-gradient(135deg, var(--navy) 0%, var(--electric-blue-dark) 100%);
+            }
+            50% {
+                background: linear-gradient(135deg, var(--navy-light) 0%, var(--electric-blue) 100%);
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .partnership-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero-highlight {
+            color: var(--electric-blue);
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: var(--electric-blue);
+            margin: 2rem auto;
+        }
+        
+        .zero-cost {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 10px;
+            border: 2px solid var(--gold);
+        }
+        
+        /* CTAボタン */
+        .cta-primary {
+            display: inline-block;
+            padding: 1.25rem 3rem;
+            background: var(--gradient-gold);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: pulse 2s infinite;
+            margin-top: 2rem;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 20px rgba(245, 158, 11, 0);
+            }
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.5);
+        }
+        
+        .disclaimer {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 1rem;
+        }
+        
+        /* メガベンチャー実績セクション */
+        .achievements {
+            padding: 100px 20px;
+            background: var(--gray-light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 3rem;
+        }
+        
+        /* 実績カード */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-tech);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--electric-blue-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+        
+        /* 独自価値セクション */
+        .unique-value {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+        
+        .value-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            padding: 2rem;
+            border-radius: 15px;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            opacity: 0;
+            animation: fadeInUp 0.6s forwards;
+        }
+        
+        .value-card:nth-child(1) { animation-delay: 0.2s; }
+        .value-card:nth-child(2) { animation-delay: 0.4s; }
+        .value-card:nth-child(3) { animation-delay: 0.6s; }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .value-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .value-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+        
+        .value-divider {
+            width: 50px;
+            height: 2px;
+            background: var(--electric-blue);
+            margin: 1rem 0;
+        }
+        
+        .value-description {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+        
+        /* 価値創造インフォグラフィック */
+        .value-creation {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, var(--white) 0%, var(--gray-light) 100%);
+            text-align: center;
+        }
+        
+        .infographic-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            position: relative;
+            height: 500px;
+        }
+        
+        .circle-diagram {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .center-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 180px;
+            background: var(--gradient-tech);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.5rem;
+            z-index: 10;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: pulse-slow 3s infinite;
+        }
+        
+        @keyframes pulse-slow {
+            0%, 100% {
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 20px 60px rgba(0, 217, 255, 0.4);
+            }
+        }
+        
+        .value-node {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: var(--white);
+            border: 3px solid var(--electric-blue);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .value-node:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.4);
+            background: linear-gradient(135deg, var(--white) 0%, rgba(0, 217, 255, 0.05) 100%);
+        }
+        
+        .value-node-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .value-node-text {
+            font-size: 1rem;
+            color: var(--navy);
+        }
+        
+        .value-node.top {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .value-node.bottom-left {
+            bottom: 0;
+            left: 15%;
+        }
+        
+        .value-node.bottom-right {
+            bottom: 0;
+            right: 15%;
+        }
+        
+        /* 矢印アニメーション */
+        .arrow-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .arrow {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            opacity: 0.4;
+            animation: rotate-arrow 10s linear infinite;
+        }
+        
+        .arrow::before {
+            content: '→';
+            position: absolute;
+            font-size: 2rem;
+            color: var(--electric-blue);
+            font-weight: bold;
+        }
+        
+        .arrow.arrow-1 {
+            top: 30%;
+            left: 30%;
+            transform: rotate(120deg);
+        }
+        
+        .arrow.arrow-2 {
+            top: 30%;
+            right: 30%;
+            transform: rotate(240deg);
+        }
+        
+        .arrow.arrow-3 {
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%) rotate(0deg);
+        }
+        
+        @keyframes rotate-arrow {
+            0% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 0.2;
+            }
+        }
+        
+        .value-detail {
+            display: none;
+            position: absolute;
+            background: var(--white);
+            border: 2px solid var(--electric-blue);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            z-index: 20;
+            width: 280px;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .value-detail.show {
+            display: block;
+        }
+        
+        .value-detail h4 {
+            color: var(--electric-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .value-detail p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* チームセクション */
+        .team {
+            padding: 100px 20px;
+            background: var(--gray-light);
+            position: relative;
+        }
+        
+        /* 創業記念特典バッジ */
+        .special-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-gold);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(245, 158, 11, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: badge-pulse 2s infinite;
+        }
+        
+        @keyframes badge-pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+            border: 4px solid var(--gold);
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+        
+        .team-photo:hover {
+            filter: grayscale(0%);
+        }
+        
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+        
+        .team-divider {
+            width: 100%;
+            height: 2px;
+            background: var(--gold);
+            margin: 1rem 0;
+        }
+        
+        .team-tagline {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+        
+        /* 採用プロセスタイムライン */
+        .process {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto;
+            overflow-x: auto;
+        }
+        
+        .timeline-track {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding: 2rem 0;
+            min-width: 800px;
+        }
+        
+        .timeline-track::before {
+            content: '';
+            position: absolute;
+            top: 3rem;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--electric-blue);
+        }
+        
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .timeline-day {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--electric-blue);
+            color: var(--white);
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+        
+        .timeline-detail {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+        
+        /* 創業パートナーセクション */
+        .founding-partner {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--gold) 0%, #DC2626 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .founding-partner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .founding-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .lightning {
+            font-size: 2rem;
+            margin: 0 1rem;
+        }
+        
+        .founding-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 2rem 0;
+        }
+        
+        .benefits-list {
+            text-align: left;
+            margin: 2rem auto;
+            max-width: 400px;
+        }
+        
+        .benefit-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .slots-remaining {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 2rem 0;
+            animation: pulse 2s infinite;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 100px 20px;
+            background: var(--gray-light);
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--navy);
+        }
+        
+        .faq-arrow {
+            transition: transform 0.3s;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            color: var(--gray);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 300px;
+        }
+        
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+        
+        /* フッター */
+        footer {
+            padding: 50px 20px;
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .footer-license {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.875rem;
+            opacity: 0.7;
+        }
+        
+        /* 固定CTA（モバイル） */
+        .fixed-cta {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: calc(100% - 40px);
+            max-width: 400px;
+        }
+        
+        /* スクロールトップボタン */
+        .scroll-top {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--electric-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 999;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+        }
+        
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .value-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .fixed-cta {
+                display: block;
+            }
+            
+            .timeline-track {
+                min-width: auto;
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .timeline-track::before {
+                display: none;
+            }
+            
+            section {
+                padding: 60px 20px;
+            }
+        }
+        
+        /* カウントアップアニメーション用 */
+        .count-up {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="particles-bg" id="particles"></div>
+        <div class="hero-content">
+            <div class="partnership-badge">
+                Tokyo AI Community 正式提携
+            </div>
+            
+            <h1>
+                <span class="hero-highlight">日本唯一</span>の<br>
+                AI人材採用支援パートナー
+            </h1>
+            
+            <div class="divider"></div>
+            
+            <div class="zero-cost">
+                💰 採用成功まで費用0円
+            </div>
+            
+            <p class="hero-subtitle">
+                FAANG・メガベンチャー450名以上の<br>
+                タレントプールから最短2週間で採用実現
+            </p>
+            
+            <a href="#contact" class="cta-primary">
+                今すぐ人材リストを見る
+            </a>
+            
+            <p class="disclaimer">
+                *2025年9月現在
+            </p>
+        </div>
+    </section>
+    
+    <!-- メガベンチャー実績 -->
+    <section class="achievements">
+        <div class="container">
+            <h2 class="section-title">3,000名のタレントプール構成</h2>
+            <p class="section-subtitle">Tokyo AI Communityとの独占提携による実績</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-number count-up" data-target="450">0</div>
+                    <div class="stat-label">
+                        FAANG/メガベン<br>
+                        在籍者
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-number"><span class="count-up" data-target="800">0</span>万円+</div>
+                    <div class="stat-label">
+                        平均年収
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-number count-up" data-target="200">0</div>
+                    <div class="stat-label">
+                        GitHubスター<br>
+                        保有者
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number"><span class="count-up" data-target="2">0</span>週間</div>
+                    <div class="stat-label">
+                        他社より3週間早い<br>
+                        内定獲得
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 独自価値 -->
+    <section class="unique-value">
+        <div class="container">
+            <h2 class="section-title">なぜ特別なルートなのか</h2>
+            <p class="section-subtitle">転職サイトでは出会えない人材へのアクセス</p>
+            
+            <div class="value-cards">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <div class="value-title">ダイレクトスカウト</div>
+                    <div class="value-divider"></div>
+                    <p class="value-description">
+                        コミュニティ内で<br>
+                        直接アプローチ
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">📅</div>
+                    <div class="value-title">限定イベント開催</div>
+                    <div class="value-divider"></div>
+                    <p class="value-description">
+                        採用イベントを<br>
+                        独占的に開催
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <div class="value-title">隠れた優秀層</div>
+                    <div class="value-divider"></div>
+                    <p class="value-description">
+                        転職サイトでは<br>
+                        出会えない人材へ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 価値創造 -->
+    <section class="value-creation">
+        <div class="container">
+            <h2 class="section-title">VALUE CREATE</h2>
+            <p class="section-subtitle">3つの価値を循環させる経営支援</p>
+            
+            <div class="infographic-container">
+                <div class="circle-diagram">
+                    <!-- 矢印 -->
+                    <div class="arrow-container">
+                        <div class="arrow arrow-1"></div>
+                        <div class="arrow arrow-2"></div>
+                        <div class="arrow arrow-3"></div>
+                    </div>
+                    
+                    <!-- 中心 -->
+                    <div class="center-circle">
+                        VALUE<br>CREATE
+                    </div>
+                    
+                    <!-- ノード -->
+                    <div class="value-node top" onclick="toggleValueDetail('corporate')">
+                        <div class="value-node-icon">🏢</div>
+                        <div class="value-node-text">企業価値</div>
+                    </div>
+                    <div class="value-node bottom-left" onclick="toggleValueDetail('talent')">
+                        <div class="value-node-icon">👤</div>
+                        <div class="value-node-text">人材価値</div>
+                    </div>
+                    <div class="value-node bottom-right" onclick="toggleValueDetail('social')">
+                        <div class="value-node-icon">🌏</div>
+                        <div class="value-node-text">社会価値</div>
+                    </div>
+                    
+                    <!-- 詳細 -->
+                    <div class="value-detail" id="corporate-detail" style="top: -100px; left: 50%; transform: translateX(-50%);">
+                        <h4>🏢 企業価値</h4>
+                        <p>最適なAI人材配置により、企業の技術力と競争力を向上させ、ビジネスの成長を加速</p>
+                    </div>
+                    <div class="value-detail" id="talent-detail" style="bottom: -50px; left: 0;">
+                        <h4>👤 人材価値</h4>
+                        <p>エンジニアの理想的なキャリア実現と、継続的な成長機会の創出をサポート</p>
+                    </div>
+                    <div class="value-detail" id="social-detail" style="bottom: -50px; right: 0;">
+                        <h4>🌏 社会価値</h4>
+                        <p>日本のAI技術発展とイノベーション促進に貢献し、グローバル競争力を強化</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- チーム -->
+    <section class="team">
+        <div class="container">
+            <!-- 創業記念特典バッジ -->
+            <div class="special-badge">
+                🏷️ 創業記念特典<br>
+                採用成功まで0円
+            </div>
+            <h2 class="section-title">Team</h2>
+            <p class="section-subtitle">起業家 × 人材プロフェッショナル</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="BON Headshot.avif" alt="Barry O'Neill" class="team-photo">
+                    <h3 class="team-name">Barry O'Neill</h3>
+                    <div class="team-divider"></div>
+                    <p class="team-tagline">
+                        グローバル起業家<br>
+                        欧州VC/PEネットワーク
+                    </p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="shu koike.png" alt="Shu Koike" class="team-photo">
+                    <h3 class="team-name">Shu Koike</h3>
+                    <div class="team-divider"></div>
+                    <p class="team-tagline">
+                        採用スペシャリスト<br>
+                        1,000名以上の支援実績
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 採用プロセス -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">最短2週間の採用フロー</h2>
+            <p class="section-subtitle">スピーディーかつ確実な採用プロセス</p>
+            
+            <div class="timeline">
+                <div class="timeline-track">
+                    <div class="timeline-item">
+                        <div class="timeline-day">Day 1</div>
+                        <div class="timeline-title">要件定義</div>
+                        <div class="timeline-detail">即日対応</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-day">Day 3</div>
+                        <div class="timeline-title">リスト提出</div>
+                        <div class="timeline-detail">10名厳選</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-day">Day 7</div>
+                        <div class="timeline-title">面談設定</div>
+                        <div class="timeline-detail">直接調整</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-day">Day 14</div>
+                        <div class="timeline-title">内定獲得</div>
+                        <div class="timeline-detail">入社支援</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 創業パートナー -->
+    <section class="founding-partner">
+        <div class="founding-content">
+            <span class="lightning">⚡</span>
+            <span class="founding-title">限定3社募集中</span>
+            <span class="lightning">⚡</span>
+            
+            <h2 style="margin: 2rem 0; font-size: 1.5rem;">創業パートナー特典</h2>
+            
+            <div class="benefits-list">
+                <div class="benefit-item">✓ 採用成功まで完全無料</div>
+                <div class="benefit-item">✓ 代表直轄プロジェクト</div>
+                <div class="benefit-item">✓ 月10名の大量採用対応</div>
+                <div class="benefit-item">✓ 競合より3週間早い採用</div>
+            </div>
+            
+            <div class="slots-remaining">
+                残り［2］枠
+            </div>
+            
+            <a href="#contact" class="cta-primary" style="background: white; color: var(--navy);">
+                今すぐ申し込む
+            </a>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">よくあるご質問</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Tokyo AI Communityとの提携内容は？
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Tokyo AI Communityと正式に提携し、コミュニティメンバーへの独占的なアクセス権を持っています。
+                        定期的なイベント開催やダイレクトスカウトが可能です。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        なぜ無料なのですか？
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        創業パートナー企業様には、サービス立ち上げ期の特別オファーとして、
+                        採用成功まで完全無料でサービスを提供しています。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        どんな企業が対象？
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        AI・データサイエンス・機械学習エンジニアを必要とする全ての企業が対象です。
+                        スタートアップから大企業まで幅広く対応しています。
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        何名まで採用可能？
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        創業パートナー企業様は月10名までの大量採用にも対応可能です。
+                        通常プランでも月3-5名の採用実績があります。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">AI Talent Bridge by Value Create</h3>
+            <p style="margin-bottom: 2rem;">Tokyo AI Community 正式提携企業</p>
+            
+            <div class="footer-license">
+                有料職業紹介事業許可番号：13-ユ-301304<br>
+                © 2024 Value Create Inc. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 固定CTA（モバイル） -->
+    <div class="fixed-cta">
+        <a href="#contact" class="cta-primary" style="display: block; text-align: center;">
+            人材リストを見る
+        </a>
+    </div>
+    
+    <!-- スクロールトップボタン -->
+    <div class="scroll-top" id="scrollTop">
+        ↑
+    </div>
+    
+    <script>
+        // パーティクルとネットワーク生成
+        function createParticlesWithNetwork() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            
+            const particles = [];
+            
+            // パーティクル生成
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+                particles.push(particle);
+            }
+            
+            // 接続線を生成
+            for (let i = 0; i < particles.length - 1; i++) {
+                if (Math.random() > 0.5) { // 50%の確率で接続
+                    const line = document.createElement('div');
+                    line.className = 'particle-line';
+                    
+                    const p1 = particles[i];
+                    const p2 = particles[i + 1];
+                    
+                    // 線の位置と角度を計算
+                    const updateLine = () => {
+                        const rect1 = p1.getBoundingClientRect();
+                        const rect2 = p2.getBoundingClientRect();
+                        const containerRect = container.getBoundingClientRect();
+                        
+                        const x1 = rect1.left - containerRect.left + rect1.width / 2;
+                        const y1 = rect1.top - containerRect.top + rect1.height / 2;
+                        const x2 = rect2.left - containerRect.left + rect2.width / 2;
+                        const y2 = rect2.top - containerRect.top + rect2.height / 2;
+                        
+                        const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+                        const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+                        
+                        line.style.width = length + 'px';
+                        line.style.left = x1 + 'px';
+                        line.style.top = y1 + 'px';
+                        line.style.transform = `rotate(${angle}deg)`;
+                        line.style.animationDelay = Math.random() * 3 + 's';
+                    };
+                    
+                    updateLine();
+                    container.appendChild(line);
+                    
+                    // 定期的に更新
+                    setInterval(updateLine, 100);
+                }
+            }
+        }
+        
+        // 価値創造セクションの詳細表示切替
+        function toggleValueDetail(type) {
+            const details = document.querySelectorAll('.value-detail');
+            const detail = document.getElementById(type + '-detail');
+            
+            // 他の詳細を非表示
+            details.forEach(d => {
+                if (d !== detail) {
+                    d.classList.remove('show');
+                }
+            });
+            
+            // クリックした詳細を切替
+            detail.classList.toggle('show');
+        }
+        
+        // カウントアップアニメーション
+        function animateCountUp() {
+            const counters = document.querySelectorAll('.count-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 2000;
+                        const increment = target / (duration / 16);
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            });
+            
+            counters.forEach(counter => observer.observe(counter));
+        }
+        
+        // FAQ アコーディオン
+        function initFAQ() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        }
+        
+        // スクロールトップボタン
+        function initScrollTop() {
+            const scrollBtn = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollBtn.classList.add('visible');
+                } else {
+                    scrollBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // スムーススクロール
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // 初期化
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticlesWithNetwork();
+            animateCountUp();
+            initFAQ();
+            initScrollTop();
+            initSmoothScroll();
+        });
+    </script>
+</body>
+</html>

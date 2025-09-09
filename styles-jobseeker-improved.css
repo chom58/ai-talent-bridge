@@ -1,0 +1,1129 @@
+:root {
+    /* 洗練されたカラーパレット */
+    --primary: #00D9FF;
+    --primary-dark: #0099CC;
+    --accent: #FFD700;
+    --bg-dark: #0A0F1C;
+    --bg-card: #141B2D;
+    --surface: #1A1F3A;
+    --surface-light: rgba(26, 31, 58, 0.6);
+    --text-primary: #FFFFFF;
+    --text-secondary: #A8B2C7;
+    --border: rgba(0, 217, 255, 0.2);
+    --gradient-primary: linear-gradient(135deg, #00D9FF 0%, #0099FF 100%);
+    --gradient-dark: linear-gradient(135deg, #0A0F1C 0%, #1A1F3A 100%);
+    
+    --section-padding: 80px 0;
+    --container-width: 1200px;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ヘッダー改善 */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 15, 28, 0.98);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-items {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-items a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.nav-items a:hover {
+    color: var(--primary);
+}
+
+.header-badges {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.tokyo-ai-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 217, 255, 0.1);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    color: var(--primary);
+}
+
+.header-cta {
+    padding: 0.75rem 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.header-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
+}
+
+/* ヒーローセクション改善 */
+.hero {
+    background: var(--gradient-dark);
+    padding: 100px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-badge-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(0, 217, 255, 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 30px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(0, 217, 255, 0.2); }
+    50% { box-shadow: 0 0 30px rgba(0, 217, 255, 0.4); }
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin: 2rem 0;
+    line-height: 1.3;
+    font-weight: 900;
+}
+
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 3つの特徴を大きく目立たせる */
+.hero-features-enhanced {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0, 217, 255, 0.05);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.feature-item:hover {
+    background: rgba(0, 217, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.feature-text strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.feature-text span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* CTAボタンの改善 - 1つに絞る */
+.cta-primary {
+    background: var(--gradient-primary);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 18px 48px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 8px 24px rgba(0, 217, 255, 0.4);
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-primary:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 217, 255, 0.6);
+}
+
+.cta-primary:hover:before {
+    width: 300px;
+    height: 300px;
+}
+
+.cta-arrow {
+    margin-left: 0.5rem;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.cta-primary:hover .cta-arrow {
+    transform: translateX(5px);
+}
+
+.cta-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.scroll-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.scroll-hint:hover {
+    color: var(--primary);
+}
+
+/* なぜ選ばれているのか */
+.why-choose-us {
+    background: var(--surface);
+    padding: var(--section-padding);
+}
+
+.why-choose-us h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-size: 1.125rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-card {
+    background: rgba(26, 31, 54, 0.8);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+.feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.feature-card .number {
+    font-size: 3rem;
+    color: var(--primary);
+    font-weight: bold;
+    display: block;
+    margin: 1rem 0;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Tokyo AIセクションの改善 */
+.partnership-badge-large {
+    text-align: center;
+    margin: 3rem auto;
+}
+
+.badge-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 3rem;
+    background: var(--bg-card);
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 217, 255, 0.2);
+}
+
+.badge-text {
+    text-align: left;
+}
+
+.badge-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.badge-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.badge-number .unit {
+    font-size: 1.5rem;
+    margin-left: 0.25rem;
+}
+
+.badge-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* 具体的なメリットカード */
+.concrete-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.benefit-card {
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.benefit-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 217, 255, 0.15);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-data {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.data-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.data-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* コミュニティの説明 */
+.community-description {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: var(--bg-card);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.community-description h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.community-description p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 企業セクションの改善 */
+.company-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.type-card {
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.type-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.type-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.type-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.type-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* フォームセクションの改善 */
+.consultation-form {
+    background: linear-gradient(135deg, #1a1f3a, #2a3050);
+    padding: 100px 0;
+}
+
+.consultation-list {
+    margin-top: 1.5rem;
+}
+
+.consultation-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.consultation-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.consultation-list li:last-child {
+    border-bottom: none;
+}
+
+/* フォームの視認性向上 */
+.contact-form-enhanced {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--primary);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 217, 255, 0.1);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.required::after {
+    content: " *";
+    color: #FF6B6B;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 14px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    transition: var(--transition);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.next-btn,
+.submit-btn-enhanced {
+    width: 100%;
+    padding: 16px;
+    background: var(--gradient-primary);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 6px 20px rgba(0, 217, 255, 0.3);
+}
+
+.next-btn:hover,
+.submit-btn-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 217, 255, 0.4);
+}
+
+.checkbox-label-enhanced {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.privacy-link {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.form-note {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: #666;
+}
+
+/* サポートチーム */
+.support-team {
+    background: var(--surface);
+}
+
+.team-roles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.role-card {
+    padding: 2rem;
+    background: rgba(26, 31, 54, 0.5);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(0, 217, 255, 0.1);
+    transition: var(--transition);
+}
+
+.role-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.role-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.role-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.support-items {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.support-items li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.team-note {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* 私たちについて */
+.about-us {
+    background: var(--bg-dark);
+    padding: 100px 0;
+}
+
+.company-philosophy {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.company-philosophy .lead {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.8;
+}
+
+/* バリュークリエイトの特徴 */
+.company-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.company-features .feature {
+    text-align: center;
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.company-features .feature:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.company-features .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.company-features .feature h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.company-features .feature p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* 代表メッセージ */
+.ceo-message {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary);
+}
+
+.ceo-message h3 {
+    color: var(--primary);
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.message-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.ceo-info {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    text-align: right;
+}
+
+.ceo-name {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* 会社情報 */
+.company-info {
+    max-width: 700px;
+    margin: 4rem auto 0;
+}
+
+.company-info h3 {
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.info-table {
+    width: 100%;
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.info-table tr {
+    border-bottom: 1px solid var(--border);
+}
+
+.info-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-table th {
+    width: 30%;
+    padding: 1rem 1.5rem;
+    background: rgba(0, 217, 255, 0.05);
+    color: var(--primary);
+    text-align: left;
+    font-weight: 600;
+}
+
+.info-table td {
+    padding: 1rem 1.5rem;
+    color: var(--text-secondary);
+}
+
+/* サービスの流れ */
+.service-process {
+    background: var(--bg-dark);
+}
+
+.process-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.step-card {
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    position: relative;
+    transition: var(--transition);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.step-number {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.step-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.duration {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(0, 217, 255, 0.1);
+    border-radius: 15px;
+    font-size: 0.875rem;
+    color: var(--primary);
+}
+
+.timeline-summary {
+    text-align: center;
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    margin-top: 2rem;
+}
+
+.timeline-summary strong {
+    color: var(--primary);
+}
+
+/* FAQ改善 */
+.faq {
+    background: var(--bg-dark);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 3rem auto;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-item[open] {
+    border-color: var(--primary);
+    box-shadow: 0 5px 20px rgba(0, 217, 255, 0.1);
+}
+
+.faq-item summary {
+    padding: 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: var(--transition);
+}
+
+.faq-item summary:hover {
+    background: rgba(0, 217, 255, 0.05);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+}
+
+.faq-item p {
+    padding: 0 1.5rem 1.5rem 3.75rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.faq-item p strong {
+    color: var(--primary);
+}
+
+/* フッター */
+footer {
+    background: var(--surface);
+    padding: 3rem 0 1rem;
+    border-top: 1px solid rgba(0, 217, 255, 0.1);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.link-section h4 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.link-section ul {
+    list-style: none;
+}
+
+.link-section li {
+    margin-bottom: 0.5rem;
+}
+
+.link-section a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.link-section a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legal-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.partnership-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+}
+
+/* 追加スタイル */
+.description {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.note {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-top: 2rem;
+}
+
+/* モバイル最適化 */
+@media (max-width: 1200px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .company-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .ceo-message {
+        padding: 2rem 1.5rem;
+    }
+    
+    .info-table th {
+        width: 40%;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-features-enhanced {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+    
+    .feature-item {
+        padding: 1rem;
+    }
+    
+    .feature-icon {
+        font-size: 2rem;
+    }
+    
+    .badge-content {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+    
+    .concrete-benefits {
+        grid-template-columns: 1fr;
+    }
+    
+    .company-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form-enhanced {
+        padding: 1.5rem;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* タップターゲットのサイズ確保 */
+    button, input, select, summary {
+        min-height: 48px;
+    }
+    
+    .cta-primary {
+        padding: 16px 32px;
+        font-size: 16px;
+    }
+    
+    /* ナビゲーション */
+    .nav-items {
+        display: none;
+    }
+    
+    .header-badges {
+        font-size: 0.875rem;
+    }
+}

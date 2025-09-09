@@ -1,0 +1,88 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Backup files
+backup-files/
+archived/
+archived_css/
+*.backup
+*.bak
+
+# Local development
+*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Netlify
+.netlify/
+
+# Test and temporary files
+test-*.html
+*-test.html
+*-backup.html
+*-optimized.html
+simple-test.html
+background-check.html
+version-comparison.html
+
+# Optimization scripts and reports
+optimize-*.js
+image-optimization-*.html
+image-optimization-*.json
+create-minified-css.js
+DEPLOYMENT_GUIDE.md
+
+# Temporary CSS files
+final-hero.css
+styles-main.css
+responsive-enhanced.css
+
+# Large unoptimized images (keep only optimized versions)
+career-path-wide.png
+hero-background.png
+
+# Background loader (removed in favor of defer)
+force-load.js
+background-loader.js

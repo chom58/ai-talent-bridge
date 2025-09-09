@@ -1,0 +1,76 @@
+<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bridge Icon with AI Nodes -->
+  <g id="logo-icon">
+    <!-- Bridge Structure -->
+    <path d="M8 28 L16 20 L24 28" stroke="url(#gradient1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24 28 L32 20 L40 28" stroke="url(#gradient1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Bridge Cables -->
+    <line x1="16" y1="20" x2="16" y2="32" stroke="url(#gradient2)" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="32" y1="20" x2="32" y2="32" stroke="url(#gradient2)" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    
+    <!-- Bridge Base -->
+    <line x1="6" y1="32" x2="42" y2="32" stroke="url(#gradient1)" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- AI Nodes (Neural Network Points) -->
+    <circle cx="8" cy="28" r="3" fill="#10B981">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="24" cy="28" r="3" fill="#6366F1">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="40" cy="28" r="3" fill="#10B981">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Top Connection Points -->
+    <circle cx="16" cy="20" r="2.5" fill="#6366F1"/>
+    <circle cx="32" cy="20" r="2.5" fill="#6366F1"/>
+    
+    <!-- Connection Lines (Neural Network Style) -->
+    <path d="M8 28 Q16 24 24 28" stroke="#10B981" stroke-width="0.5" opacity="0.3"/>
+    <path d="M24 28 Q32 24 40 28" stroke="#10B981" stroke-width="0.5" opacity="0.3"/>
+  </g>
+  
+  <!-- Text Logo -->
+  <g id="logo-text">
+    <!-- AI -->
+    <text x="54" y="26" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#0F172A">
+      AI
+    </text>
+    
+    <!-- Talent -->
+    <text x="74" y="26" font-family="Inter, sans-serif" font-size="18" font-weight="400" fill="#475569">
+      Talent
+    </text>
+    
+    <!-- Bridge -->
+    <text x="124" y="26" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#10B981">
+      Bridge
+    </text>
+    
+    <!-- Tagline removed for cleaner design -->
+  </g>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4F46E5;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Hover Effect Filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>

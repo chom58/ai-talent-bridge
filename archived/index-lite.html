@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Talent Bridge - バリュークリエイト｜次世代AI人材採用プラットフォーム</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --secondary: #10B981;
+            --accent: #F59E0B;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #4F46E5, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        
+        .cta-primary {
+            background: linear-gradient(90deg, #F59E0B, #EF4444);
+            color: white;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+    
+    <!-- ナビゲーション -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-bold">
+                    <span class="gradient-text">AI Talent Bridge</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="hover:text-blue-600">About</a>
+                    <a href="#solution" class="hover:text-blue-600">Solution</a>
+                    <a href="#team" class="hover:text-blue-600">Team</a>
+                    <a href="#contact" class="cta-primary">
+                        <i data-lucide="phone-call" class="w-5 h-5"></i>
+                        無料相談
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ヒーローセクション -->
+    <section class="hero-section min-h-screen flex items-center text-white pt-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl lg:text-6xl font-bold mb-6">
+                AI Talent Bridge
+            </h1>
+            <p class="text-2xl lg:text-3xl mb-8">
+                次世代のAI人材と出会う、新しい採用のかたち
+            </p>
+            <p class="text-xl mb-12 max-w-3xl mx-auto">
+                国内外のAI・テックコミュニティとの独自ネットワークで<br>
+                従来の採用では出会えない人材層にアクセス
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="cta-primary">
+                    <i data-lucide="phone-call" class="w-5 h-5"></i>
+                    無料相談予約
+                </button>
+                <button class="bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition">
+                    <i data-lucide="download" class="w-5 h-5 inline mr-2"></i>
+                    資料ダウンロード
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About セクション -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="gradient-text">About</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    バリュークリエイトが新たに立ち上げる<br>
+                    AI人材に特化した採用支援サービスです
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="card text-center">
+                    <i data-lucide="award" class="w-12 h-12 mx-auto mb-4 text-blue-600"></i>
+                    <h3 class="text-xl font-bold mb-2">20年の実績</h3>
+                    <p class="text-gray-600">経営コンサル20年の信頼と実績</p>
+                </div>
+                <div class="card text-center">
+                    <i data-lucide="globe" class="w-12 h-12 mx-auto mb-4 text-green-600"></i>
+                    <h3 class="text-xl font-bold mb-2">グローバルネットワーク</h3>
+                    <p class="text-gray-600">国内外AIコミュニティとの連携</p>
+                </div>
+                <div class="card text-center">
+                    <i data-lucide="users" class="w-12 h-12 mx-auto mb-4 text-purple-600"></i>
+                    <h3 class="text-xl font-bold mb-2">5,000名以上</h3>
+                    <p class="text-gray-600">実践者ネットワーク</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ソリューション -->
+    <section id="solution" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="gradient-text">私たちのソリューション</span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="card">
+                    <i data-lucide="git-branch" class="w-10 h-10 mb-4 text-blue-600"></i>
+                    <h3 class="text-xl font-bold mb-2">独自ネットワーク</h3>
+                    <p class="text-gray-600">転職市場に出てこない優秀な人材へアクセス</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="layers" class="w-10 h-10 mb-4 text-green-600"></i>
+                    <h3 class="text-xl font-bold mb-2">多角的評価</h3>
+                    <p class="text-gray-600">技術力と文化適合性の両面から評価</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="zap" class="w-10 h-10 mb-4 text-purple-600"></i>
+                    <h3 class="text-xl font-bold mb-2">スピード採用</h3>
+                    <p class="text-gray-600">最短1週間で候補者をご紹介</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- チーム -->
+    <section id="team" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="gradient-text">TEAM</span>
+                </h2>
+                <p class="text-xl text-gray-600">経験豊富なプロフェッショナルチーム</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-2">Barry O'Neill</h3>
+                    <p class="text-gray-600 mb-4">バリュークリエイト パートナー</p>
+                    <p class="text-sm text-gray-600">
+                        起業家として米国・欧州・英国・日本・中国で事業を展開。
+                        欧州PE/VCとのネットワークでAI人材採用を支援。
+                    </p>
+                </div>
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-2">Shu Koike</h3>
+                    <p class="text-gray-600 mb-4">AI Talent Bridge 事業責任者</p>
+                    <p class="text-sm text-gray-600">
+                        教育・人材・人事の3領域を横断する採用のスペシャリスト。
+                        日本企業の人事制度設計からAI人材定着まで伴走。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8">
+                まずは情報から始めてみませんか？
+            </h2>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="cta-primary">
+                    <i data-lucide="download" class="w-5 h-5"></i>
+                    資料請求
+                </button>
+                <button class="bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition">
+                    <i data-lucide="phone-call" class="w-5 h-5 inline mr-2"></i>
+                    無料相談
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- フッター -->
+    <footer class="py-8 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 Value Create Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Lucide Icons初期化 -->
+    <script>
+        // シンプルなLucide Icons初期化
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

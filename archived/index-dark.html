@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Talent Bridge - バリュークリエイト｜次世代AI人材採用プラットフォーム</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --navy-900: #0F172A;
+            --navy-800: #1E293B;
+            --navy-700: #334155;
+            --cyan: #00D9FF;
+            --purple: #8B5CF6;
+            --gold: #F59E0B;
+            --green: #10B981;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: var(--navy-900);
+            overflow-x: hidden;
+        }
+        
+        /* グラスモーフィズム */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+        
+        /* グラデーションテキスト */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* コンテナ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ナビゲーション */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--cyan);
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 100px 20px 60px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        /* ボタン */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, var(--gold), #EF4444);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* セクション */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-dark {
+            background: var(--navy-800);
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+        }
+        
+        /* カード */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .card {
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border-radius: 1rem;
+        }
+        
+        .icon-cyan { background: linear-gradient(135deg, var(--cyan), var(--purple)); }
+        .icon-gold { background: linear-gradient(135deg, var(--gold), #EF4444); }
+        .icon-green { background: linear-gradient(135deg, var(--green), var(--cyan)); }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card p {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+        
+        /* 統計セクション */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        
+        /* チームカード */
+        .team-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-card {
+            padding: 2.5rem;
+            text-align: center;
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-avatar-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .team-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: var(--cyan);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* CTA */
+        .cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+        }
+        
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+        
+        /* フッター */
+        footer {
+            background: var(--navy-900);
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        footer p {
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav>
+        <div class="container">
+            <div class="logo gradient-text">AI Talent Bridge</div>
+            <div class="nav-menu">
+                <a href="#about">About</a>
+                <a href="#solution">Solution</a>
+                <a href="#team">Team</a>
+                <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 1rem;">無料相談</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ヒーロー -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="gradient-text">AI Talent Bridge</h1>
+            <h2>次世代のAI人材と出会う、新しい採用のかたち</h2>
+            <p>国内外のAI・テックコミュニティとの独自ネットワークで<br>
+            従来の採用では出会えない人材層にアクセス</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary">
+                    無料相談予約
+                </a>
+                <a href="#download" class="btn btn-secondary">
+                    資料ダウンロード
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About -->
+    <section id="about" class="section-dark">
+        <div class="container">
+            <h2 class="gradient-text">About</h2>
+            <p class="section-subtitle">バリュークリエイトが新たに立ち上げる<br>AI人材に特化した採用支援サービス</p>
+            
+            <div class="stats">
+                <div class="stat glass">
+                    <div class="stat-number gradient-text">20+</div>
+                    <div class="stat-label">年の実績</div>
+                </div>
+                <div class="stat glass">
+                    <div class="stat-number gradient-text">5,000+</div>
+                    <div class="stat-label">人材ネットワーク</div>
+                </div>
+                <div class="stat glass">
+                    <div class="stat-number gradient-text">95%</div>
+                    <div class="stat-label">マッチング成功率</div>
+                </div>
+                <div class="stat glass">
+                    <div class="stat-number gradient-text">7</div>
+                    <div class="stat-label">日での採用実績</div>
+                </div>
+            </div>
+            
+            <div class="cards">
+                <div class="card glass">
+                    <div class="card-icon icon-cyan">🏢</div>
+                    <h3>20年の実績</h3>
+                    <p>経営コンサルタントとして20年以上の実績を持つバリュークリエイトが、その知見を活かしてAI人材採用を支援します。</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon icon-gold">🌐</div>
+                    <h3>グローバルネットワーク</h3>
+                    <p>国内外のAI・テックコミュニティとの強固な連携により、優秀な人材へのアクセスを実現します。</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon icon-green">👥</div>
+                    <h3>実践者コミュニティ</h3>
+                    <p>5,000名以上の実践者コミュニティのネットワークを活用し、転職市場に出てこない人材をご紹介します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ソリューション -->
+    <section id="solution">
+        <div class="container">
+            <h2 class="gradient-text">私たちのソリューション</h2>
+            <p class="section-subtitle">AI人材採用の課題を解決する3つのアプローチ</p>
+            
+            <div class="cards">
+                <div class="card glass">
+                    <div class="card-icon icon-cyan">🎯</div>
+                    <h3>独自ネットワーク活用</h3>
+                    <p>転職市場に出てこない優秀な人材へ直接アプローチ。コミュニティとの連携により、隠れた才能を発掘します。</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon icon-gold">📊</div>
+                    <h3>多角的な評価</h3>
+                    <p>技術力だけでなく、企業文化との適合性も重視。長期的な活躍を見据えたマッチングを実現します。</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon icon-green">⚡</div>
+                    <h3>スピード採用</h3>
+                    <p>最短1週間で候補者をご紹介。スピーディーな対応で、優秀な人材を逃しません。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- プロセス -->
+    <section class="section-dark">
+        <div class="container">
+            <h2 class="gradient-text">採用プロセス</h2>
+            <p class="section-subtitle">シンプルかつ効果的な3ステップ</p>
+            
+            <div class="cards">
+                <div class="card glass">
+                    <div class="card-icon icon-cyan">1</div>
+                    <h3>ヒアリング</h3>
+                    <p>求める人材像、技術要件、企業文化などを詳細にヒアリング。最適なマッチング戦略を策定します。</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon icon-gold">2</div>
+                    <h3>候補者選定</h3>
+                    <p>独自ネットワークから最適な候補者を選定。技術力と文化適合性の両面から評価します。</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon icon-green">3</div>
+                    <h3>面接サポート</h3>
+                    <p>面接設定から入社まで一貫してサポート。スムーズな採用プロセスを実現します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- チーム -->
+    <section id="team">
+        <div class="container">
+            <h2 class="gradient-text">Team</h2>
+            <p class="section-subtitle">経験豊富なプロフェッショナルチーム</p>
+            
+            <div class="team-cards">
+                <div class="team-card glass">
+                    <div class="team-avatar">
+                        <img src="BON Headshot.avif" alt="Barry O'Neill" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="team-avatar-placeholder" style="display:none;">BO</div>
+                    </div>
+                    <h3>Barry O'Neill</h3>
+                    <div class="team-role">バリュークリエイト パートナー</div>
+                    <p>起業家として米国・欧州・英国・日本・中国で事業を展開。欧州PE/VCとのネットワークでAI人材採用を支援。</p>
+                </div>
+                <div class="team-card glass">
+                    <div class="team-avatar">
+                        <img src="スクリーンショット 2025-08-08 15.17.11.png" alt="Shu Koike" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="team-avatar-placeholder" style="display:none;">SK</div>
+                    </div>
+                    <h3>Shu Koike</h3>
+                    <div class="team-role">AI Talent Bridge 事業責任者</div>
+                    <p>教育・人材・人事の3領域を横断する採用のスペシャリスト。日本企業の人事制度設計からAI人材定着まで伴走。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <h2 class="gradient-text">まずは情報から始めてみませんか？</h2>
+            <p>AI人材採用でお困りの企業様へ、無料相談を実施しています</p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary">
+                    資料請求
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    無料相談予約
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Value Create Inc. All Rights Reserved.</p>
+            <p>有料職業紹介事業許可番号: 13-ユ-301304</p>
+        </div>
+    </footer>
+</body>
+</html>

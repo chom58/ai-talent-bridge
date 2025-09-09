@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Value Create キャリア支援 | 採用企業の方へ - Tokyo AI Community Official Partner</title>
+    <meta name="description" content="Value Createが提供する企業向けAI人材採用支援サービス。Tokyo AI Community公式パートナー。厳選されたハイレベルAIエンジニアとのマッチングをサポート。">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles-consolidated.css">
+    <link rel="stylesheet" href="custom.css">
+    
+    <!-- Force CTA button styles and title fix -->
+    <style>
+        /* HEADER VISIBILITY IMPROVEMENTS - INLINE FOR IMMEDIATE EFFECT */
+        
+        /* Reset body margin for fixed header */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Header Background with Dark Theme */
+        .header {
+            background: rgba(10, 10, 10, 0.85) !important; /* 半透明の黒背景 */
+            backdrop-filter: blur(8px) !important; /* 軽いブラー効果 */
+            border-bottom: none !important; /* 境界線を削除 */
+            padding: 16px 0 !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 1000 !important;
+        }
+        
+        /* Navigation Container */
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 20px; /* 要素間のスペース */
+        }
+        
+        /* Logo Styling */
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            white-space: nowrap; /* 改行を防ぐ */
+        }
+        
+        .logo-img {
+            height: 45px;
+            width: auto;
+            max-width: 200px;
+            transition: transform 0.3s ease;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        
+        .logo-img:hover {
+            transform: translateY(-2px);
+            filter: drop-shadow(0 4px 8px rgba(16, 185, 129, 0.4));
+        }
+        
+        /* Logo Badge Styling */
+        .logo-badge {
+            font-size: 0.75rem;
+            color: rgba(16, 185, 129, 0.9);
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+        
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            gap: 24px; /* ギャップを調整 */
+            align-items: center;
+            flex-shrink: 0; /* メニューが縮小しないように */
+        }
+        
+        .nav-link {
+            color: rgba(229, 228, 226, 0.9) !important;
+            font-size: 0.9rem !important; /* フォントサイズを少し小さく */
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            white-space: nowrap; /* 改行を防ぐ */
+        }
+        
+        .nav-link:hover {
+            color: #00D9FF !important;
+            text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00D9FF, #39FF14);
+            transition: width 0.3s ease;
+        }
+        
+        /* Media Query for better header on smaller screens */
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 16px;
+            }
+            .nav-link {
+                font-size: 0.85rem !important;
+            }
+            .logo-badge {
+                display: none; /* 小さい画面では非表示 */
+            }
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        /* CTA Button with Cyber Theme */
+        .nav-cta {
+            background: linear-gradient(135deg, #00D9FF 0%, #39FF14 100%) !important;
+            color: #0A0A0A !important;
+            padding: 10px 24px !important;
+            border-radius: 8px !important;
+            font-weight: 700 !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 217, 255, 0.3);
+        }
+        
+        .nav-cta:hover {
+            box-shadow: 
+                0 4px 12px rgba(0, 217, 255, 0.5),
+                0 0 20px rgba(57, 255, 20, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        /* Language Switcher in Dark Header */
+        .language-switcher {
+            background: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            border-radius: 20px;
+            padding: 4px;
+            display: flex;
+            gap: 4px;
+        }
+        
+        .lang-btn {
+            color: rgba(255, 255, 255, 0.8) !important;
+            background: transparent;
+            border: 1px solid transparent;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.15) !important;
+            color: #ffffff !important;
+        }
+        
+        .lang-btn.active {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+            color: white !important;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Hero Section with New Background */
+        .hero-section {
+            margin-top: 0 !important; /* ヘッダーとの隙間を削除 */
+            padding-top: 0 !important; /* パディングも削除 */
+            min-height: 100vh !important; /* Full viewport height */
+            position: relative !important;
+            overflow: hidden !important;
+            display: flex !important;
+            align-items: center !important; /* 垂直中央配置 */
+        }
+        
+        /* Background Image Layer */
+        .hero-background-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+        
+        .hero-bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        /* Add subtle overlay for better readability */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(10, 10, 10, 0.3) 0%,
+                rgba(10, 10, 10, 0.5) 50%,
+                rgba(10, 10, 10, 0.7) 100%
+            );
+            z-index: 1;
+        }
+        
+        /* Ensure content is above overlay */
+        .hero-content {
+            position: relative !important;
+            z-index: 10 !important;
+            padding-top: 100px !important; /* Proper spacing from fixed header */
+        }
+        
+        /* Remove this rule - we need to show the background layer */
+        /* .hero-background-layer was hidden before - now showing it */
+        
+        /* Make hero-content transparent to show background */
+        .hero-content-inner {
+            background: transparent !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+        
+        /* Hero text styling with improved spacing */
+        .hero-text {
+            background: transparent !important;
+            padding: 3rem 2rem !important;
+            max-width: 800px !important;
+            margin: 0 auto !important;
+        }
+        
+        /* Enhanced main title with better readability */
+        .main-title {
+            text-shadow: 
+                0 0 10px rgba(0, 217, 255, 0.8),
+                0 0 20px rgba(0, 217, 255, 0.6),
+                0 0 30px rgba(0, 217, 255, 0.4),
+                3px 3px 6px rgba(0, 0, 0, 0.95) !important;
+            color: #ffffff !important;
+            font-weight: 900 !important;
+            font-size: clamp(2.5rem, 5vw, 4rem) !important;
+            line-height: 1.1 !important;
+            letter-spacing: -0.5px !important;
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+            margin-bottom: 1.5rem !important;
+        }
+        
+        @keyframes pulse-glow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.1); }
+        }
+        
+        .subtitle {
+            color: #00D9FF !important;
+            text-shadow: 
+                0 0 10px rgba(0, 217, 255, 0.8),
+                0 0 20px rgba(0, 217, 255, 0.5),
+                3px 3px 5px rgba(0, 0, 0, 0.95) !important;
+            font-weight: 800 !important;
+            font-size: 1.25rem !important;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem !important;
+        }
+        
+        .hero-description {
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.95),
+                0 0 15px rgba(229, 228, 226, 0.4) !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            font-size: 1.2rem !important;
+            line-height: 1.7 !important;
+            margin-bottom: 2rem !important;
+        }
+        
+        /* Enhanced Trust Badges with better visibility */
+        .trust-badges {
+            margin: 2rem 0 3rem 0 !important;
+        }
+        
+        .trust-badges .badge {
+            background: rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(0, 217, 255, 0.5) !important;
+            font-weight: 700 !important;
+            font-size: 0.95rem !important;
+            padding: 12px 20px !important;
+            box-shadow: 
+                0 4px 12px rgba(0, 0, 0, 0.4),
+                inset 0 0 20px rgba(0, 217, 255, 0.15) !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .trust-badges .badge:hover {
+            border-color: #39FF14 !important;
+            box-shadow: 
+                0 4px 12px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(57, 255, 20, 0.5),
+                inset 0 0 20px rgba(0, 217, 255, 0.2) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        .badge-icon {
+            filter: saturate(1.5) !important;
+        }
+        
+        /* Enhanced CTA button - bigger and more prominent */
+        .cta-primary {
+            background: linear-gradient(135deg, #00D9FF 0%, #39FF14 100%) !important;
+            color: #0A0A0A !important;
+            border: 2px solid transparent !important;
+            box-shadow: 
+                0 6px 20px rgba(0, 217, 255, 0.5),
+                0 0 40px rgba(57, 255, 20, 0.4) !important;
+            font-weight: 900 !important;
+            font-size: 1.25rem !important;
+            padding: 20px 48px !important;
+            text-transform: none !important;
+            letter-spacing: 0.5px !important;
+            position: relative !important;
+            overflow: hidden !important;
+            transition: all 0.3s ease !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            border-radius: 12px !important;
+            margin-top: 20px !important;
+        }
+        
+        .cta-primary::after {
+            content: '→';
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-primary:hover {
+            background: linear-gradient(135deg, #39FF14 0%, #00D9FF 100%) !important;
+            box-shadow: 
+                0 8px 30px rgba(0, 217, 255, 0.7),
+                0 0 60px rgba(57, 255, 20, 0.6) !important;
+            transform: translateY(-3px) scale(1.05) !important;
+        }
+        
+        .cta-primary:hover::after {
+            transform: translateX(4px);
+        }
+        
+        .cta-primary:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #00D9FF, #39FF14, #00D9FF);
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .cta-primary:hover:before {
+            opacity: 1;
+        }
+        
+        /* Section backgrounds for dark theme */
+        .trust-section {
+            background: linear-gradient(180deg, transparent 0%, #1A1A1A 20%) !important;
+            padding: 80px 0 !important;
+        }
+        
+        .companies-section {
+            background: linear-gradient(180deg, #1A1A1A 0%, rgba(26, 26, 26, 0.8) 100%) !important;
+        }
+        
+        
+        .team-section {
+            background: #0A0A0A !important;
+        }
+        
+        .contact-section {
+            background: linear-gradient(180deg, #0A0A0A 0%, #000000 100%) !important;
+        }
+        
+        .footer-minimal {
+            background: #000000 !important;
+            border-top: 1px solid rgba(57, 255, 20, 0.2) !important;
+        }
+        
+        /* Update Trust cards with glassmorphism */
+        .trust-card {
+            background: rgba(255, 255, 255, 0.03) !important;
+            backdrop-filter: blur(10px) !important;
+            border: 1px solid rgba(0, 217, 255, 0.2) !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .trust-card:hover {
+            border-color: rgba(57, 255, 20, 0.5) !important;
+            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.2) !important;
+            transform: translateY(-5px) !important;
+        }
+        
+        /* Section headings */
+        .trust-title, h2 {
+            color: #00D9FF !important;
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.3) !important;
+        }
+        
+        .trust-subtitle, h3 {
+            color: #E5E4E2 !important;
+        }
+        
+        /* Badge labels in trust cards */
+        .trust-card .badge {
+            background: linear-gradient(135deg, #39FF14, #7FFF5C) !important;
+            color: #0A0A0A !important;
+            font-weight: 700 !important;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 12px 0 !important;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .nav-menu {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .logo-img {
+                height: 32px; /* Smaller logo on mobile */
+            }
+            
+            .hero-section {
+                margin-top: 0 !important; /* ヘッダーとの隙間を削除 */
+                padding-top: 0 !important; /* パディングも削除 */
+                background: url('./images/project-gene-background.png') center/cover no-repeat !important;
+            }
+            
+            .hero-content {
+                padding-top: 120px !important; /* Adjusted for mobile header */
+            }
+            
+            .language-switcher {
+                margin: 10px 0;
+                order: -1;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .nav-cta {
+                width: 100%;
+                text-align: center;
+                order: 2;
+            }
+        }
+        
+        /* END OF HEADER IMPROVEMENTS */
+        
+        /* Force title line break for PC with tighter spacing */
+        @media (min-width: 769px) {
+            .main-title {
+                white-space: pre-line !important;
+                display: block !important;
+                line-height: 0.9 !important;  /* Very tight line spacing */
+            }
+            .main-title br {
+                display: block !important;
+                content: "\A" !important;
+                white-space: pre !important;
+                margin: -0.3em 0 !important;  /* More negative margin for tighter gap */
+            }
+        }
+        
+        /* CTA Button styles */
+        .cta-primary,
+        a.cta-primary {
+            background: #10B981 !important;
+            color: #FFFFFF !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            font-weight: 700 !important;
+            padding: 16px 48px !important;
+            border: 3px solid #10B981 !important;
+            border-radius: 50px !important;
+            display: inline-block !important;
+            text-decoration: none !important;
+            position: relative !important;
+            z-index: 9999 !important;
+        }
+        .cta-primary:hover {
+            background: #059669 !important;
+            border-color: #059669 !important;
+        }
+    </style>
+    
+    <!-- Force title break with JavaScript as fallback -->
+    <script>
+        // Trigger animation when trust section comes into view
+        window.addEventListener('scroll', function() {
+            const trustSection = document.querySelector('.trust-section');
+            if (trustSection) {
+                const rect = trustSection.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    trustSection.classList.add('in-view');
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-logo">
+                <img src="images/value-create-logo.png" alt="Value Create" class="logo-img">
+                <span class="logo-badge" data-i18n="nav.badge">Tokyo AI Community Official Partner</span>
+            </div>
+            <div class="nav-center">
+                <a href="#solution" class="nav-link">サービス</a>
+                <a href="#trust" class="nav-link">実績</a>
+                <a href="#pricing" class="nav-link">料金</a>
+            </div>
+            <div class="nav-right">
+                <a href="#consultation" class="nav-cta-primary">無料で要件整理（30分）</a>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="ja">JP</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-links">
+                <a href="#companies" data-i18n="nav.companies">Companies</a>
+                <a href="#benefits" data-i18n="nav.support">Support</a>
+                <a href="#team" data-i18n="nav.team">Team</a>
+                <a href="#register" data-i18n="nav.register">Free Registration</a>
+            </div>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="ja">日本語</button>
+                <button class="lang-btn" data-lang="en">English</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <!-- Background Image Layer with WebP support -->
+        <div class="hero-background-layer">
+            <picture>
+                <source srcset="images/project-gene-background.webp?v=20250905" type="image/webp">
+                <img src="images/project-gene-background.png?v=20250905" alt="" class="hero-bg-image" loading="eager">
+            </picture>
+        </div>
+        <div class="hero-content">
+            <!-- Left side: Text content -->
+            <div class="hero-text">                
+                <!-- Main Title -->
+                <h1 class="main-title">
+                    コミュニティ推薦で、<br>
+                    ミスマッチの少ないAI採用を。
+                </h1>
+                
+                <!-- Hero Description -->
+                <p class="hero-description">
+                    Tokyo AI（公式）× Value Create。<br>
+                    要件定義→面接設計→オンボーディングまで一社で完結。<br>
+                    <span class="hero-highlight">成功まで費用0円／最短3日で面談。</span>
+                </p>
+                
+                <!-- Trust Badges (3 key items) -->
+                <div class="trust-badges">
+                    <div class="badge hero-feature">
+                        <span class="badge-icon">👥</span>
+                        <span class="feature-value">2,600+ AI人材</span>
+                        <a href="#trust" class="badge-link" aria-label="詳細を見る">*</a>
+                    </div>
+                    <div class="badge hero-feature">
+                        <span class="badge-icon">🔄</span>
+                        <span class="feature-value">返金保証30日</span>
+                        <a href="#guarantee" class="badge-link" aria-label="詳細を見る">*</a>
+                    </div>
+                    <div class="badge hero-feature">
+                        <span class="badge-icon">🌐</span>
+                        <span class="feature-value">英日バイリンガル面接</span>
+                        <a href="#bilingual" class="badge-link" aria-label="詳細を見る">*</a>
+                    </div>
+                </div>
+                
+                <!-- Primary & Secondary CTA -->
+                <div class="cta-container">
+                    <a href="#consultation" class="cta-primary hero-cta-primary">
+                        無料で要件整理（30分）
+                    </a>
+                    <a href="#download-materials" class="cta-secondary hero-cta-secondary">
+                        1分で資料を見る
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section class="challenges-section" id="challenges">
+        <div class="container">
+            <h2 data-translate="challenges.title">「AI人材が採用できない」その理由は</h2>
+            <p class="section-subtitle" data-translate="challenges.subtitle">多くの企業が直面する採用課題</p>
+            
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <div class="challenge-icon">🚫</div>
+                    <h3 data-translate="challenges.item1.title">リーチの限界</h3>
+                    <p data-translate="challenges.item1.description">既存媒体では優秀層にリーチできない</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">📉</div>
+                    <h3 data-translate="challenges.item2.title">低い返信率</h3>
+                    <p data-translate="challenges.item2.description">他社からのスカウトが集中し、返信率が低い</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">⚠️</div>
+                    <h3 data-translate="challenges.item3.title">定着の課題</h3>
+                    <p data-translate="challenges.item3.description">内定後の定着や活躍まで見据えた支援が不足</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section" id="solution">
+        <div class="container">
+            <h2 data-translate="solution.title">Value Create × Tokyo AI</h2>
+            <p class="section-subtitle" data-translate="solution.subtitle">通常の求人媒体では出会えない優秀層へのアプローチが可能</p>
+            
+            <div class="partnership-display">
+                <div class="partner-logo">
+                    <h3>Value Create</h3>
+                </div>
+                <span class="partnership-operator">×</span>
+                <div class="partner-logo">
+                    <h3>Tokyo AI</h3>
+                </div>
+            </div>
+            
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <h3 data-translate="solution.card1.title">企業価値の可視化</h3>
+                    <p data-translate="solution.card1.description">Value Createの23年の実績を活かした企業価値分析</p>
+                </div>
+                
+                <div class="solution-card">
+                    <h3 data-translate="solution.card2.title">Tokyo AIコミュニティ</h3>
+                    <p data-translate="solution.card2.description">国内最大級2,600名以上のAIエンジニアネットワーク</p>
+                </div>
+                
+                <div class="solution-card">
+                    <h3 data-translate="solution.card3.title">潜在層へのアプローチ</h3>
+                    <p data-translate="solution.card3.description">コミュニティを通じた信頼関係からの採用</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section (Timeline) -->
+    <section class="process-section process-timeline" id="process">
+        <div class="container">
+            <h2 data-translate="process.title">採用までの流れ</h2>
+            <p class="section-subtitle" data-translate="process.subtitle">いずれも当社にて対応します</p>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-step-number">1</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 data-translate="process.steps.step1.title">Step 1: 採用要件を整理</h3>
+                        <p data-translate="process.steps.step1.description">貴社のニーズと理想の人材像をヒアリング</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-step-number">2</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 data-translate="process.steps.step2.title">Step 2: 候補者を探索</h3>
+                        <p data-translate="process.steps.step2.description">Tokyo AIネットワークを活用して最適な人材を発掘</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-step-number">3</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 data-translate="process.steps.step3.title">Step 3: 接点を構築</h3>
+                        <p data-translate="process.steps.step3.description">ネットワークを通じて潜在層との信頼関係を構築</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-step-number">4</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 data-translate="process.steps.step4.title">Step 4: 伴走支援</h3>
+                        <p data-translate="process.steps.step4.description">内定・入社まで完全サポート</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-container" style="text-align: center; margin-top: 50px;">
+                <a href="#contact-form" class="cta-primary process-cta">
+                    <span data-translate="process.cta">相談してみる</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust/Network Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-header">
+                <h2>信頼できるネットワーク</h2>
+            </div>
+            
+            <div class="trust-points">
+                <div class="trust-point">
+                    <span class="trust-bullet">•</span>
+                    <span class="trust-text"><strong>Tokyo AI参加者：</strong>2,600名以上</span>
+                </div>
+                <div class="trust-point">
+                    <span class="trust-bullet">•</span>
+                    <span class="trust-text">スタートアップから上場企業まで幅広く支援</span>
+                </div>
+                <div class="trust-point">
+                    <span class="trust-bullet">•</span>
+                    <span class="trust-text">TechStars・教育機関・人材専門家によるネットワーク</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <h2 class="section-title" data-translate="team.title">
+                チーム紹介
+            </h2>
+            <p class="section-subtitle" data-translate="team.subtitle">
+                グローバルな視点と日本市場の深い理解を併せ持つ専門家
+            </p>
+            
+            <div class="team-grid">
+                <!-- Barry O'Neill -->
+                <div class="team-card advisor">
+                    <img src="images/barry.avif" alt="Barry O'Neill" class="team-photo" loading="lazy">
+                    <h3 class="team-name member-name" data-translate="team.member1.name">Barry O'Neill</h3>
+                    <p class="role member-role" data-translate="team.member1.role">グローバル起業家・TechStarsメンター</p>
+                    <p class="description member-bio" data-translate="team.member1.bio">
+                        欧州PE/VCネットワークでAI人材採用を支援。米国・欧州・英国・日本・中国で起業経験。
+                    </p>
+                </div>
+                
+                <!-- Shu Koike -->
+                <div class="team-card founder">
+                    <img src="images/shu.png" alt="Shu Koike" class="team-photo" loading="lazy">
+                    <h3 class="team-name member-name" data-translate="team.member2.name">Shu Koike</h3>
+                    <p class="role member-role" data-translate="team.member2.role">教育・人材・人事を横断するスペシャリスト</p>
+                    <p class="description member-bio" data-translate="team.member2.bio">
+                        教育から採用・制度設計まで一貫して支援。1,000名以上のキャリア支援実績。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="team-cta">
+                <a href="#register" class="btn-primary" data-translate="hero.cta">まずは相談する（無料）</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>まずはお気軽にご相談ください</h2>
+            <p class="cta-subtitle">AI人材採用のご状況を伺い、最適なアプローチをご提案します。</p>
+            <div class="cta-buttons">
+                <a href="#contact-form" class="cta-primary">無料相談を申し込む</a>
+                <a href="#download" class="cta-secondary">資料をダウンロード</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Success Stories Section - REMOVED -->
+    <!-- 
+    <section class="success" id="success">
+        Tokyo AI Community member career stories section has been removed
+    </section>
+    -->
+
+    <!-- Process Section - REMOVED -->
+    <!--
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">Career Support Process</h2>
+            <p class="section-subtitle">Achieve your ideal career at your own pace</p>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">STEP 01</div>
+                    <h3 class="step-title">Free Registration</h3>
+                    <p class="step-description">Start with simple registration</p>
+                    <p class="step-time">Start immediately</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">STEP 02</div>
+                    <h3 class="step-title">Career Consultation</h3>
+                    <p class="step-description">Consult with expert analysts</p>
+                    <p class="step-time">Take your time</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">STEP 03</div>
+                    <h3 class="step-title">Company Introduction</h3>
+                    <p class="step-description">Introducing growth companies</p>
+                    <p class="step-time">Based on matching</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">STEP 04</div>
+                    <h3 class="step-title">Offer & Onboarding</h3>
+                    <p class="step-description">Support until the end</p>
+                    <p class="step-time">Peace of mind</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Information -->
+                <div class="footer-company-info">
+                    <div class="footer-brand">
+                        <span class="footer-logo">Value Create</span>
+                        <span class="footer-badge" data-i18n="nav.badge">Tokyo AI Community 公式パートナー</span>
+                    </div>
+                    <div class="company-details">
+                        <p class="company-name">
+                            <a href="https://www.valuecreate.net/" target="_blank" rel="noopener noreferrer" style="color: #10B981; text-decoration: none; font-weight: 600; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                                株式会社バリュークリエイト →
+                            </a>
+                        </p>
+                        <p class="company-address">東京都中央区銀座1-18-2 辰ビル7F</p>
+                        <p class="company-tel">TEL: <a href="tel:03-6263-0777">03-6263-0777</a></p>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div class="footer-links">
+                    <a href="privacy-policy.html" target="_blank" class="privacy-link">プライバシーポリシー</a>
+                    <a href="terms.html" target="_blank" class="terms-link">利用規約</a>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 AI Talent Bridge by Value Create Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA for Mobile -->
+    <div class="floating-cta">
+        <a href="#contact-form" class="btn-floating">
+            無料相談
+        </a>
+    </div>
+    
+    <!-- Optimized JavaScript Loading with defer -->
+    <script src="translations.js?v=202509050145" defer></script>
+    <script src="language-switcher.js?v=202509050145" defer></script>
+    <script src="script.js" defer></script>
+    <script src="mobile-menu.js?v=202509050145" defer></script>
+</body>
+</html>

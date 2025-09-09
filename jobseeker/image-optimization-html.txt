@@ -1,0 +1,24 @@
+
+<!-- Responsive Images with WebP -->
+<picture>
+    <source type="image/webp" 
+            srcset="images/career-path-wide-640.webp 640w,
+                    images/career-path-wide-768.webp 768w,
+                    images/career-path-wide-1024.webp 1024w,
+                    images/career-path-wide-1920.webp 1920w"
+            sizes="(max-width: 640px) 100vw, 
+                   (max-width: 768px) 100vw, 
+                   (max-width: 1024px) 100vw, 
+                   1920px">
+    <img src="images/career-path-wide.png" 
+         alt="AI Career Path" 
+         loading="lazy"
+         width="1920" 
+         height="1080">
+</picture>
+
+<!-- Lazy Loading for Images -->
+<img src="images/shu.png" 
+     alt="Shu Koike" 
+     loading="lazy"
+     decoding="async">

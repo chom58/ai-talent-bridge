@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー | AI Talent Bridge</title>
+    <link rel="stylesheet" href="styles-consolidated.css">
+    <script src="legal-translations.js"></script>
+    <style>
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        .lang-btn {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            color: #00D9FF;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        .lang-btn:hover {
+            background: rgba(0, 217, 255, 0.1);
+            border-color: #00D9FF;
+            box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+        }
+        .lang-btn.active {
+            background: linear-gradient(135deg, #00D9FF, #39FF14);
+            color: #0A0A0A;
+            border-color: #39FF14;
+        }
+        .policy-container {
+            max-width: 800px;
+            margin: 100px auto 50px;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .policy-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .policy-title {
+            font-size: 2rem;
+            color: #0F172A;
+            margin-bottom: 10px;
+        }
+        .policy-date {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        .policy-section {
+            margin-bottom: 30px;
+        }
+        .policy-section h2 {
+            color: #0F172A;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #10B981;
+        }
+        .policy-section p,
+        .policy-section li {
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        .policy-section ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: #10B981;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #059669;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="ja">日本語</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div>
+    
+    <div class="policy-container">
+        <div class="policy-header">
+            <h1 class="policy-title" data-i18n="privacy_title">プライバシーポリシー</h1>
+            <p class="policy-date"><span data-i18n="last_updated">最終更新日</span>: 2025年9月1日</p>
+        </div>
+
+        <div class="policy-section">
+            <h2 data-i18n="privacy_article_1">第1条（個人情報の定義）</h2>
+            <p data-i18n="privacy_article_1_content">個人情報とは、生存する個人に関する情報であって、氏名、生年月日、住所、電話番号、メールアドレス等により特定の個人を識別することができるものを指します。</p>
+        </div>
+
+        <div class="policy-section">
+            <h2 data-i18n="privacy_article_2">第2条（個人情報の収集）</h2>
+            <p data-i18n="privacy_article_2_intro">当社は、以下の場合に個人情報を収集することがあります：</p>
+            <ul>
+                <li data-i18n="privacy_article_2_1">サービス利用登録時</li>
+                <li data-i18n="privacy_article_2_2">お問い合わせ時</li>
+                <li data-i18n="privacy_article_2_3">キャリアカウンセリング実施時</li>
+                <li data-i18n="privacy_article_2_4">求人応募時</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2 data-i18n="privacy_article_3">3. 個人情報の利用目的</h2>
+            <p data-i18n="privacy_article_3_intro">収集した個人情報は、以下の目的で利用します：</p>
+            <ul>
+                <li data-i18n="privacy_article_3_1">キャリアサポートサービスの提供</li>
+                <li data-i18n="privacy_article_3_2">求人企業とのマッチング</li>
+                <li data-i18n="privacy_article_3_3">お問い合わせへの対応</li>
+                <li data-i18n="privacy_article_3_4">サービス改善のための分析</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2 data-i18n="privacy_article_4">4. 個人情報の第三者提供</h2>
+            <p data-i18n="privacy_article_4_content">当社は、以下の場合を除き、個人情報を第三者に提供しません：本人の同意がある場合、法令に基づく場合、求人企業への応募に必要な場合（本人の同意を得た範囲内）</p>
+        </div>
+
+        <div class="policy-section">
+            <h2 data-i18n="privacy_article_5">5. 個人情報の管理</h2>
+            <p data-i18n="privacy_article_5_content">当社は、個人情報の正確性を保ち、安全に管理するため、適切な技術的・組織的対策を講じます。</p>
+        </div>
+
+        <div class="policy-section">
+            <h2 data-i18n="privacy_article_7">7. Cookieの使用について</h2>
+            <p data-i18n="privacy_article_7_content">当社は、サービス向上のためCookieを使用することがあります。Cookieの使用を望まない場合は、ブラウザの設定により無効化できます。</p>
+        </div>
+
+        <div class="policy-section">
+            <h2 data-i18n="privacy_article_6">6. 個人情報の開示・訂正・削除</h2>
+            <p data-i18n="privacy_article_6_content">ご本人から個人情報の開示、訂正、削除等のご要望があった場合は、本人確認の上、速やかに対応いたします。</p>
+        </div>
+
+        <div class="policy-section">
+            <h2 data-i18n="privacy_article_8">8. プライバシーポリシーの変更</h2>
+            <p data-i18n="privacy_article_8_content">当社は、必要に応じて本ポリシーを変更することがあります。変更後のポリシーは、当サイトに掲載した時点から効力を生じるものとします。</p>
+        </div>
+
+        <div class="policy-section">
+            <h2 data-i18n="privacy_contact">お問い合わせ先</h2>
+            <p data-i18n="privacy_company_info">本ポリシーに関するお問い合わせは、以下までご連絡ください：</p>
+            <p>
+                <span data-i18n="terms_company_name">株式会社バリュークリエイト</span><br>
+                <span data-i18n="terms_company_email">メール：contact@aitalentbridge.com</span><br>
+                <span data-i18n="terms_company_license">有料職業紹介事業 許可番号：13-ユ-301304</span>
+            </p>
+        </div>
+
+        <a href="index.html" class="back-link" data-i18n="back_to_home">トップページへ戻る</a>
+    </div>
+</body>
+</html>

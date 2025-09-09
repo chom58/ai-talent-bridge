@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Value Create キャリア支援サービス | Tokyo AI Community Official Partner</title>
+    <meta name="description" content="Value Createが提供するAIエンジニアと企業を繋ぐキャリア支援サービス。Tokyo AI Communityの公式パートナー。">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+        
+        .logo {
+            max-width: 320px;
+            height: auto;
+            margin: 0 auto 20px;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: auto;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .card-subtitle {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .card-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .card-features li {
+            padding: 8px 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        
+        .card-features li::before {
+            content: '✓';
+            margin-right: 10px;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .card-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover .card-cta {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            color: #667eea;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            z-index: 100;
+        }
+        
+        .language-toggle:hover {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="language-toggle" onclick="switchLanguage()">EN</button>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="value-create-logo.png" alt="Value Create">
+            </div>
+            <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 10px;">キャリア支援サービス</h1>
+            <p class="tagline" data-translate="tagline">AIエンジニアと企業を繋ぐプラットフォーム</p>
+            <span class="badge">Tokyo AI Community Official Partner</span>
+        </div>
+        
+        <div class="cards-container">
+            <a href="jobseeker/" class="card">
+                <div class="card-icon">👨‍💻</div>
+                <h2 class="card-title" data-translate="jobseeker.title">AIエンジニアの方へ</h2>
+                <p class="card-subtitle" data-translate="jobseeker.subtitle">
+                    最適なキャリア機会を見つけて、次のステージへ
+                </p>
+                <ul class="card-features">
+                    <li data-translate="jobseeker.feature1">完全無料のキャリアサポート</li>
+                    <li data-translate="jobseeker.feature2">企業価値分析による最適マッチング</li>
+                    <li data-translate="jobseeker.feature3">多言語対応の個別サポート</li>
+                    <li data-translate="jobseeker.feature4">長期的なキャリア成長支援</li>
+                </ul>
+                <span class="card-cta" data-translate="jobseeker.cta">キャリア相談を始める →</span>
+            </a>
+            
+            <a href="corporate/" class="card">
+                <div class="card-icon">🏢</div>
+                <h2 class="card-title" data-translate="corporate.title">採用企業の方へ</h2>
+                <p class="card-subtitle" data-translate="corporate.subtitle">
+                    優秀なAIエンジニアを効率的に採用
+                </p>
+                <ul class="card-features">
+                    <li data-translate="corporate.feature1">厳選されたAI人材プール</li>
+                    <li data-translate="corporate.feature2">技術評価とカルチャーフィット</li>
+                    <li data-translate="corporate.feature3">採用プロセス全体をサポート</li>
+                    <li data-translate="corporate.feature4">平均30日での採用実現</li>
+                </ul>
+                <span class="card-cta" data-translate="corporate.cta">採用相談を始める →</span>
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        const translations = {
+            ja: {
+                tagline: "AIエンジニアと企業を繋ぐプラットフォーム",
+                jobseeker: {
+                    title: "AIエンジニアの方へ",
+                    subtitle: "最適なキャリア機会を見つけて、次のステージへ",
+                    feature1: "完全無料のキャリアサポート",
+                    feature2: "企業価値分析による最適マッチング",
+                    feature3: "多言語対応の個別サポート",
+                    feature4: "長期的なキャリア成長支援",
+                    cta: "キャリア相談を始める →"
+                },
+                corporate: {
+                    title: "採用企業の方へ",
+                    subtitle: "優秀なAIエンジニアを効率的に採用",
+                    feature1: "厳選されたAI人材プール",
+                    feature2: "技術評価とカルチャーフィット",
+                    feature3: "採用プロセス全体をサポート",
+                    feature4: "平均30日での採用実現",
+                    cta: "採用相談を始める →"
+                }
+            },
+            en: {
+                tagline: "Connecting AI Engineers with Companies",
+                jobseeker: {
+                    title: "For AI Engineers",
+                    subtitle: "Find your perfect career opportunity and advance to the next level",
+                    feature1: "Completely free career support",
+                    feature2: "Optimal matching through company value analysis",
+                    feature3: "Multilingual personalized support",
+                    feature4: "Long-term career growth assistance",
+                    cta: "Start Career Consultation →"
+                },
+                corporate: {
+                    title: "For Companies",
+                    subtitle: "Efficiently hire elite AI engineering talent",
+                    feature1: "Pre-screened AI talent pool",
+                    feature2: "Technical assessment & cultural fit",
+                    feature3: "Full hiring process support",
+                    feature4: "Average 30-day hiring success",
+                    cta: "Start Hiring Process →"
+                }
+            }
+        };
+        
+        let currentLanguage = 'ja';
+        
+        function initializeLanguage() {
+            const browserLang = navigator.language.toLowerCase();
+            const savedLang = localStorage.getItem('preferredLanguage');
+            
+            if (savedLang) {
+                currentLanguage = savedLang;
+            } else if (browserLang.startsWith('ja')) {
+                currentLanguage = 'ja';
+            } else {
+                currentLanguage = 'en';
+            }
+            
+            updatePageLanguage();
+            updateLanguageToggle();
+        }
+        
+        function switchLanguage() {
+            currentLanguage = currentLanguage === 'ja' ? 'en' : 'ja';
+            localStorage.setItem('preferredLanguage', currentLanguage);
+            updatePageLanguage();
+            updateLanguageToggle();
+        }
+        
+        function updateLanguageToggle() {
+            const toggleButton = document.querySelector('.language-toggle');
+            if (toggleButton) {
+                toggleButton.textContent = currentLanguage === 'ja' ? 'EN' : 'JP';
+            }
+        }
+        
+        function updatePageLanguage() {
+            document.documentElement.lang = currentLanguage;
+            
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const keys = element.getAttribute('data-translate').split('.');
+                let text = translations[currentLanguage];
+                
+                for (const key of keys) {
+                    text = text[key];
+                }
+                
+                if (text) {
+                    element.textContent = text;
+                }
+            });
+        }
+        
+        initializeLanguage();
+    </script>
+</body>
+</html>

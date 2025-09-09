@@ -1,0 +1,13 @@
+# Redirect rules for Netlify
+
+# Default to jobseeker page for root access
+/  /jobseeker/  301
+
+# Clean URLs
+/jobseeker  /jobseeker/  301
+/corporate  /corporate/  301
+
+# Legacy URLs (if any)
+/job-seeker  /jobseeker/  301
+/company  /corporate/  301
+/companies  /corporate/  301
