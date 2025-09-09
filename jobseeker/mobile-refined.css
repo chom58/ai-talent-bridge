@@ -1,0 +1,285 @@
+/* モバイル向け洗練されたデザイン */
+
+@media screen and (max-width: 768px) {
+  /* より洗練されたヘッダー */
+  .header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 56px !important; /* スリムに */
+    z-index: 9999 !important;
+    background: linear-gradient(180deg, 
+      rgba(10, 10, 10, 0.95) 0%, 
+      rgba(10, 10, 10, 0.85) 100%) !important;
+    backdrop-filter: blur(12px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(120%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: none !important; /* 影を削除してフラットに */
+  }
+
+  .nav-container {
+    height: 56px !important;
+    padding: 0 20px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* ロゴをシンプルに */
+  .nav-logo {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .logo-img {
+    height: 32px !important;
+    width: auto !important;
+    opacity: 0.95 !important;
+  }
+
+  /* ミニマルなハンバーガーメニュー */
+  .mobile-menu-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 8px !important;
+    width: 40px !important;
+    height: 40px !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  }
+
+  .mobile-menu-toggle span {
+    display: block !important;
+    width: 20px !important;
+    height: 1.5px !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    margin: 3.5px 0 !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border-radius: 1px !important;
+  }
+
+  /* ホバー時の微妙な変化 */
+  .mobile-menu-toggle:active span {
+    background: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* ヒーローセクションの調整 */
+  .hero-section {
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #0A0A0A !important;
+  }
+
+  /* 背景の最適化 */
+  .hero-background-layer {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    opacity: 0.7 !important; /* 背景を少し暗く */
+  }
+
+  .hero-background-layer::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(180deg, 
+      rgba(10, 10, 10, 0.4) 0%, 
+      rgba(10, 10, 10, 0.6) 100%) !important;
+    pointer-events: none !important;
+  }
+
+  /* コンテンツエリアの改善 */
+  .hero-content {
+    position: relative !important;
+    z-index: 10 !important;
+    width: 100% !important;
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  .hero-content-inner {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* タイトルの洗練 */
+  .main-title {
+    font-size: clamp(2rem, 8vw, 2.75rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+    font-weight: 800 !important;
+    margin-bottom: 1.25rem !important;
+    background: linear-gradient(135deg, 
+      #FFFFFF 0%, 
+      #00D9FF 50%, 
+      #39FF14 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: none !important;
+  }
+
+  /* サブタイトルの改善 */
+  .subtitle {
+    font-size: 0.875rem !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: rgba(0, 217, 255, 0.9) !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+    text-shadow: 0 0 20px rgba(0, 217, 255, 0.5) !important;
+  }
+
+  /* 説明文の最適化 */
+  .hero-description {
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    margin-bottom: 2rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.01em !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* CTAボタンの洗練 */
+  .cta-primary {
+    display: inline-block !important;
+    width: auto !important;
+    min-width: 200px !important;
+    padding: 16px 32px !important;
+    background: linear-gradient(135deg, #00D9FF 0%, #39FF14 100%) !important;
+    color: #0A0A0A !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+    border-radius: 100px !important;
+    border: none !important;
+    box-shadow: 
+      0 10px 30px rgba(0, 217, 255, 0.3),
+      0 0 60px rgba(0, 217, 255, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .cta-primary:active {
+    transform: scale(0.96) !important;
+    box-shadow: 
+      0 5px 15px rgba(0, 217, 255, 0.3),
+      0 0 30px rgba(0, 217, 255, 0.2) !important;
+  }
+
+  /* 言語切替ボタンの非表示 */
+  .language-switcher {
+    position: absolute !important;
+    right: 60px !important;
+    display: flex !important;
+    gap: 4px !important;
+  }
+
+  .language-switcher .lang-btn {
+    padding: 6px 10px !important;
+    font-size: 0.75rem !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 6px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 500 !important;
+  }
+
+  .language-switcher .lang-btn.active {
+    background: rgba(16, 185, 129, 0.2) !important;
+    border-color: rgba(16, 185, 129, 0.4) !important;
+    color: #10B981 !important;
+  }
+
+  /* トラストバッジの改善 */
+  .trust-badges {
+    margin-top: 2.5rem !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    justify-content: center !important;
+  }
+
+  .trust-badges .badge {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.7rem !important;
+    padding: 6px 12px !important;
+    border-radius: 20px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  /* Tokyo AI Community バッジ */
+  .badge:first-child {
+    background: linear-gradient(135deg, 
+      rgba(0, 217, 255, 0.1) 0%, 
+      rgba(57, 255, 20, 0.1) 100%) !important;
+    border-color: rgba(0, 217, 255, 0.3) !important;
+    color: #00D9FF !important;
+  }
+
+  /* 無料登録ボタンのグロー効果 */
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 
+        0 10px 30px rgba(0, 217, 255, 0.3),
+        0 0 60px rgba(0, 217, 255, 0.2);
+    }
+    50% {
+      box-shadow: 
+        0 10px 40px rgba(0, 217, 255, 0.4),
+        0 0 80px rgba(0, 217, 255, 0.3);
+    }
+  }
+
+  .cta-primary {
+    animation: glow 3s ease-in-out infinite !important;
+  }
+}
+
+/* 極小デバイス対応 */
+@media screen and (max-width: 360px) {
+  .main-title {
+    font-size: 1.75rem !important;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem !important;
+  }
+  
+  .cta-primary {
+    min-width: 180px !important;
+    padding: 14px 28px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .header {
+    background: linear-gradient(180deg, 
+      rgba(0, 0, 0, 0.95) 0%, 
+      rgba(0, 0, 0, 0.85) 100%) !important;
+  }
+}
