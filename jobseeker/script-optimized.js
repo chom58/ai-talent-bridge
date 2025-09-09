@@ -1,4 +1,4 @@
-// AI Talent Bridge - 最適化版JavaScript
+// Value Create キャリア支援サービス - 最適化版JavaScript
 // 必要最小限の機能のみを含む軽量版
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -200,7 +200,7 @@ const translations = {
             news: "News & Updates",
             blog: "Tech Blog",
             contact: "Contact",
-            copyright: "© 2025 AI Talent Bridge by Value Create Inc. All Rights Reserved.",
+            copyright: "© 2025 Value Create Inc. All Rights Reserved.",
             backToTop: "Back to Top"
         }
     },
@@ -405,7 +405,7 @@ const translations = {
             news: "最新情報",
             blog: "技術ブログ",
             contact: "お問い合わせ",
-            copyright: "© 2025 AI Talent Bridge by Value Create Inc. All Rights Reserved.",
+            copyright: "© 2025 Value Create Inc. All Rights Reserved.",
             backToTop: "トップへ戻る"
         }
     }
